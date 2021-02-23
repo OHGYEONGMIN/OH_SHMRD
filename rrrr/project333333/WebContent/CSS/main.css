@@ -1,0 +1,100 @@
+/* 硫붿씤�럹�씠吏� */
+*{
+    padding: 0;
+    margin : 0;
+    box-sizing: border-box;
+}
+/* �쟾泥댄솕硫� */
+.wrapper{
+    height: 200vh;
+    border: solid 3px black;
+    
+}
+/* -------------- */
+/* �뿤�뜑 (濡쒓렇�씤/�쉶�썝媛��엯) */
+.header{
+    height: 5%;
+    border: solid 3px red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+.logo{
+    height: 50%;
+    flex:4;
+}
+.nav{
+    height: 50%;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+.login{
+    flex: 1;
+    margin: 2%;
+}
+.signup{
+    flex: 1;
+    margin: 2%;
+}
+/* ------------------------- */
+/* 硫붿씤�럹�씠吏� */
+.main{
+    height: 45%;
+    border: green solid 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.title{
+    height: 30%;
+    width: 40%;
+    border: blue solid 3px;
+}
+/* --------------------- */
+/* 硫붿씤�럹�씠吏�2 (�옣�젏) */
+.main2{
+    height: 42%;
+    border: green solid 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.title2{
+    font-size: 2rem;
+    height: 10%;
+    
+}
+/* ---------------------------- */
+/* 洹몃┝ */
+.content {
+  
+    height: 70%;
+    width: 80%;
+    border: blue solid 3px;
+    display: flex;
+}
+.img-bg{
+    margin: 1%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border: red solid 3px;
+
+}
+.image{
+    margin: 5%;
+    flex: 3;
+
+}
+.imgtext{
+    margin: 5%;
+    flex: 1;
+}
+/* -------------------------- */
+
+
+
