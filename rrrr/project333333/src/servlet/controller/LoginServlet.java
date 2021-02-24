@@ -27,7 +27,6 @@ public class LoginServlet extends HttpServlet {
 			HttpSession session = request.getSession();
 			session.setAttribute("id", id);
 			session.setAttribute("room", room);
-			
 			if(id.equals("admin")) {
 				response.sendRedirect("admin/AdminTotalPower.jsp");
 			}else{

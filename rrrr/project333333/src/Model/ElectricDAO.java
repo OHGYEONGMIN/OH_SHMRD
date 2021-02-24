@@ -66,7 +66,6 @@ public class ElectricDAO {
 			while (rs.next()) {
 
 				String room_wh = rs.getString(3);
-				System.out.println(room_wh);
 
 				selectwh.add(room_wh);
 			}

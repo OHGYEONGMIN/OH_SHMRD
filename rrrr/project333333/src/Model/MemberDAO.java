@@ -181,4 +181,21 @@ public class MemberDAO {
 	}
 	// ------------------- 방찾기 -------------------------------
 
+	// ------------------- 방 등록하기 ---------------------------
+	public int roomupdate(String id, String inputroom) {
+		int cnt = -1;
+		connect();
+		String SQL = "update member set room = ? where id = ?";
+		try {
+			pst = conn.prepareStatement(SQL);
+			pst.setString(1, inputroom);
+			pst.setString(2, id);
+			cnt = pst.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			getClose();
+		}
+		return cnt;
+	}
 }

@@ -1,9 +1,9 @@
 body {
-	background: linear-gradient(to right bottom, #FC5C7D, #6A82FB, #7AA1D2);;
+	background: linear-gradient(to right bottom, #FC5C7D, #6A82FB, #7AA1D2);
 	color: gray;
 }
 
-/* 愿�由ъ옄�럹�씠吏� */
+/* 관리자페이지 */
 body .wrapper_admin {
 	height: 80vh;
 	width: 75%;
@@ -25,9 +25,9 @@ body .wrapper_admin {
 
 .adminpage {
 	/* background : linear-gradient(to right bottom,
-  rgba(225,225,225,0.7),
-  rgba(225,225,225,0.3)
-  ); */
+    rgba(225,225,225,0.7),
+    rgba(225,225,225,0.3)
+    ); */
 	border-radius: 3em;
 	font-size: 20px;
 	width: 100%;
@@ -38,9 +38,9 @@ body .wrapper_admin {
 
 .adminpage .adminNav {
 	/* background : linear-gradient(to right bottom,
-      rgba(225,225,225,0.7),
-      rgba(225,225,225,0.3)
-      ); */
+        rgba(225,225,225,0.7),
+        rgba(225,225,225,0.3)
+        ); */
 	border-radius: 3em;
 	width: 15%;
 	height: 100%;
@@ -64,7 +64,7 @@ body .wrapper_admin {
 	font-size: 15px;
 }
 
-/* 李⑦듃 */
+/* 차트 */
 .adminpage .chart_electric {
 	width: 60%;
 	height: 95%;
@@ -79,7 +79,7 @@ body .wrapper_admin {
 }
 
 .electric_week {
-	/* �븳以꾨줈 �빀移� �븣 */
+	/* 한줄로 합칠 때 */
 	grid-column: 1/-1;
 }
 
@@ -122,11 +122,10 @@ body .wrapper_admin {
 	margin-top: 3%;
 	margin-bottom: 3%;
 }
-
-/* 媛� 諛� �궗�슜�웾*/
+/* 납부관리 */
 .adminpage .chart_usage {
 	width: 60%;
-	height: 95%;
+	height: 100%;
 	margin-top: 20px;
 	margin-left: 2%;
 	margin-right: 2%;
@@ -134,60 +133,80 @@ body .wrapper_admin {
 	grid-column-gap: 1em;
 	display: grid;
 	grid-template-columns: 50% 50%;
-	grid-template-rows: 80%;
+	grid-template-rows: 95%;
 }
 
-.adminpage .room_usage {
+.adminpage .table {
 	display: grid;
 	grid-template-columns: 100%;
-	grid-template-rows: 10% 90%;
+	grid-template-rows: 10% 80%;
 	justify-content: center;
 	width: 100%;
 	text-align: center;
+}
+/* 각 방 사용량 */
+.adminpage .room_usage {
+	display: grid;
+	grid-template-columns: 100%;
+	grid-template-rows: 53% 43%;
+	justify-content: center;
+	width: 100%;
+	text-align: center;
+	row-gap: 1em;
+}
+
+.room_payment {
+	display: grid;
+	grid-template-columns: 100%;
+	grid-template-rows: 20% 80%;
+	border-radius: 3em;
 }
 
 .room_tbl {
 	width: 100%;
-	height: 60%;
+	height: 85%;
 	text-align: center;
 	justify-items: center;
 }
 
-.room_tbl th {
+.personal_payment {
+	display: grid;
+	grid-template-columns: 100%;
+	grid-template-rows: 25% 75%;
+}
+
+.total_payment {
+	width: 100%;
+	height: 70%;
+	text-align: center;
+	justify-items: center;
+}
+
+.total_payment th {
 	background: rgb(255, 255, 255, 0.5);
 	color: gray;
-	/* border-bottom: 1px solid #444444; */
 	padding: 3px;
 	text-align: center;
 }
 
-.room_tbl td {
+.total_payment td {
 	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+	/* border: 1px solid #7a7878; */
 	border-collapse: collapse;
 }
 
-/* �뀒�씠釉� �븘�옒留� �뫁湲�寃� */
-.room_tbl .radius1 {
-	color: gray;
-	background: rgb(255, 255, 255, 0.5);
-	border-radius: 0px 0px 0px 3em;
+/* 테이블 아래만 둥글게 */
+/* .room_tbl .radius1{
+    color: gray;
+    background: rgb(255, 255, 255, 0.5);
+    border-radius: 0px 0px 0px 3em;
 }
-
-.room_tbl .radius2 {
-	border-radius: 0px 0px 3em 0px;
-}
+.room_tbl .radius2{
+    border-radius: 0px 0px 3em 0px;
+} */
 /* ---------- */
 
-/*�궔遺�愿�由� */
-.adminpage .table {
-	display: grid;
-	grid-template-columns: 100%;
-	grid-template-rows: 10% 90%;
-	justify-content: center;
-	width: 100%;
-	text-align: center;
-}
-
+/*납부관리 */
 .payment_tbl {
 	width: 100%;
 	height: 100%;
@@ -195,7 +214,7 @@ body .wrapper_admin {
 	justify-items: center;
 }
 
-.payment_tbl th {
+.payment_tbl  th {
 	background: rgb(255, 255, 255, 0.5);
 	color: gray;
 	padding: 3px;
@@ -207,20 +226,20 @@ body .wrapper_admin {
 	/* border: 1px solid #7a7878; */
 	border-collapse: collapse;
 }
-/* �뀒�씠釉� �븘�옒留� �뫁湲�寃� */
-.payment_tbl .radius1 {
-	border-radius: 0px 0px 0px 3em;
+/* 방 별 사용량 */
+.room_tbl th {
+	background: rgb(255, 255, 255, 0.5);
+	color: gray;
+	padding: 3px;
+	text-align: center;
 }
 
-.payment_tbl .radius2 {
-	border-radius: 0px 0px 3em 0px;
-}
-/* ---------- */
-.payment {
-	grid-column: 1/-1;
+.room_tbl td {
+	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+	border-collapse: collapse;
 }
 
-/* 寃뚯떆�뙋 */
+/* 게시판 */
 .adminpage .chart_board_content {
 	width: 60%;
 	height: 95%;
@@ -244,7 +263,7 @@ body .wrapper_admin {
 	grid-row-gap: 1em;
 }
 
-/* �쑀�� �봽濡쒗븘 */
+/* 유저 프로필 */
 aside {
 	display: flex;
 	grid-row-gap: 1em;
@@ -255,7 +274,7 @@ aside {
 	width: 15%;
 	height: 95%;
 }
-/* 踰꾪듉 吏묓빀 */
+/* 버튼 집합 */
 .logout a {
 	cursor: pointer;
 	outline: none;
@@ -310,9 +329,9 @@ aside {
 
 .profile {
 	/* background : linear-gradient(to right bottom,
-      rgba(225,225,225,0.7),
-      rgba(225,225,225,0.3)
-      ); */
+        rgba(225,225,225,0.7),
+        rgba(225,225,225,0.3)
+        ); */
 	border-radius: 3em;
 	width: 100%;
 	height: 100%;
@@ -320,9 +339,9 @@ aside {
 
 .alert_msg {
 	/* background : linear-gradient(to right bottom,
-      rgba(225,225,225,0.7),
-      rgba(225,225,225,0.3)
-      ); */
+        rgba(225,225,225,0.7),
+        rgba(225,225,225,0.3)
+        ); */
 	border-radius: 3em;
 	width: 100%;
 	height: 100%;
@@ -353,7 +372,7 @@ aside {
 	justify-content: center;
 }
 
-/* 寃뚯떆�뙋 �럹�씠吏� */
+/* 게시판 페이지 */
 .adminpage .notice_board {
 	/* border: red solid 3px; */
 	width: 60%;
@@ -382,7 +401,7 @@ aside {
 	margin-top: 1%;
 	margin-bottom: 3%;
 }
-/* 媛��엯�듅�씤�럹�씠吏� */
+/* 가입승인페이지 */
 .adminpage .member {
 	/* border: red solid 3px; */
 	width: 60%;
@@ -413,7 +432,7 @@ aside {
 	margin-top: 3%;
 	display: flex;
 }
-/* 湲��젅�뒪 湲곕쾿 _ 愿�由ъ옄&媛쒖씤*/
+/* 글레스 기법 _ 관리자&개인*/
 .adminpage {
 	border-radius: 3em;
 	background: rgba(255, 255, 255, 0.2);
@@ -425,8 +444,8 @@ aside {
 }
 
 .adminNav, .electric_month, .electric_yesterday, .electric_week, .public,
-	.personal, .table, .roomtable, .room_usage, .payment, .room_select_tbl
-   .chart_board, .room_usage, .accept_list, .member_list,
+	.personal, .table, .roomtable, .room_payment, .room_select_tbl,
+	.chart_board, .personal_payment, .accept_list, .member_list,
 	.chart_board_content, .choose_room, .member_list, .profile,
 	.profile_img, .alert_msg, .logout {
 	border-radius: 3em;

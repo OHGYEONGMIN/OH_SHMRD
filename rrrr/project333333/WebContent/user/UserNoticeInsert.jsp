@@ -16,32 +16,27 @@
 <body>
   <div class="wrapper_admin">
     
-    <!-- <div class="header">
-    <div class="logo">Logo</div>
-    <div class="admin_name">안녕하세요 OOO님!</nav>
-    </div>
-    </div> -->
     <div class="adminpage">
       <div class="adminNav">
         <div class="logo">Logo</div>
-        <a href="userpage1.html">
+        <a href="UserTotalPower.jsp">
           <div class="link">
             <img src="../image/setting.png" width="20px">
             <h2>전력소비량</h2>
           </div>
-          <a href="userpage2.html">
+          <a href="UserSection.jsp">
             <div class="link">
               <img src="../image/setting.png" width="20px">
               <h2>구역별 소비량</h2>
             </div>
         </a>
-        <a href="userpage3.html">
+        <a href="UserPay.jsp">
           <div class="link">
             <img src="../image/setting.png" width="20px">
             <h2>납부관리</h2>
           </div>
       </a>
-      <a href="userpage4.html">
+      <a href="UserNotice.jsp">
         <div class="link">
           <img src="../image/setting.png" width="20px">
           <h2>게시판</h2>

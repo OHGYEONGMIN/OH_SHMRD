@@ -17,12 +17,12 @@
     <div class="adminpage">
       <div class="adminNav">
         <div class="logo">Logo</div>
-        <a href="userpage1.html">
+        <a href="UserTotalPower.jsp">
           <div class="link">
             <img src="../image/setting.png" width="20px">
             <h2>전력소비량</h2>
           </div>
-          <a href="userpage2.html">
+          <a href="UserSelectRoom.jsp">
             <div class="link">
               <img src="../image/setting.png" width="20px">
               <h2>구역별 소비량</h2>
@@ -34,7 +34,7 @@
             <h2>납부관리</h2>
           </div>
       </a>
-      <a href="userpage4_list.html">
+      <a href="UserNotice.jsp">
         <div class="link">
           <img src="../image/setting.png" width="20px">
           <h2>게시판</h2>

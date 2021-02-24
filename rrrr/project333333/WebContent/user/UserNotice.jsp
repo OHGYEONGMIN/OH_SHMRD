@@ -20,24 +20,24 @@
     <div class="adminpage">
       <div class="adminNav">
         <div class="logo">Logo</div>
-        <a href="userpage1.html">
+        <a href="UserTotalPower.jsp">
           <div class="link">
             <img src="../image/setting.png" width="20px">
             <h2>전력소비량</h2>
           </div>
-          <a href="userpage2.html">
+          <a href="UserSection.jsp">
             <div class="link">
               <img src="../image/setting.png" width="20px">
               <h2>구역별 소비량</h2>
             </div>
         </a>
-        <a href="userpage3.html">
+        <a href="UserPay.jsp">
           <div class="link">
             <img src="../image/setting.png" width="20px">
             <h2>납부관리</h2>
           </div>
       </a>
-      <a href="userpage4_list.html">
+      <a href="UserNotice.jsp">
         <div class="link">
           <img src="../image/setting.png" width="20px">
           <h2>게시판</h2>
@@ -48,7 +48,7 @@
         <div>게시판</div>
         <div >게시판 제목</div>
         <div >게시판 리스트</div>
-        <div><button onclick="location.href='./userpage4_post.html'"class="post" >게시물 작성</button></div>
+        <div><button onclick="location.href='./UserNoticeInsert.jsp"class="post" >게시물 작성</button></div>
       </div>
       
       <aside>
