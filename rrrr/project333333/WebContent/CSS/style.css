@@ -447,7 +447,7 @@ aside {
 	.personal, .table, .roomtable, .room_payment, .room_select_tbl,
 	.chart_board, .personal_payment, .accept_list, .member_list,
 	.chart_board_content, .choose_room, .member_list, .profile,
-	.profile_img, .alert_msg, .logout {
+	.profile_img, .alert_msg, .logout, #room {
 	border-radius: 3em;
 	background: rgba(255, 255, 255, 0.01);
 	box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);

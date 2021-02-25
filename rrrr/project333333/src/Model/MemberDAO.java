@@ -160,7 +160,7 @@ public class MemberDAO {
 	}
 
 	// -----------------------------닫기(Close) --------------------------
-	// ------------------- 방찾기 -------------------------------
+	// ------------------- ID값을 통한 방찾기 -------------------------------
 	public String findroom(String id) {
 		String room = "";
 		try {
@@ -198,4 +198,26 @@ public class MemberDAO {
 		}
 		return cnt;
 	}
+	// ------------------- 방 등록하기 ---------------------------
+	// ------------------- 빈방 확인 ----------------------------
+	public boolean searchroom(String inputroom) {
+		connect();
+		boolean check = false;
+		String SQL = "select room from member where room = ?";
+		try {
+			pst = conn.prepareStatement(SQL);
+			pst.setString(1, inputroom);
+			rs = pst.executeQuery();
+			while (rs.next()) {
+				check = true;
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			getClose();
+		}
+		return check;
+	}
+	// ------------------- 빈방 확인 ----------------------------
 }

@@ -52,25 +52,53 @@
 					<table class="room_select_tbl">
 						<th class="floor">층</th>
 						<th class="roomnumber" colspan="3">방 번호</th>
-						<form method="post" action="/project333333/SelectRoom.do">
+						<!-- <form method="post" action="/project333333/SelectRoom.do">
 							<tr>
 								<td class="1F">100호</td>
-								<td><input type="submit" name="roomnum" value="101호"></input></td>
-								<td><input type="submit" name="roomnum" value="102호"></input></td>
-								<td><input type="submit" name="roomnum" value="103호"></input></td>
+								<td><input id = "room" type="submit" name="roomnum" value="101호"></input></td>
+								<td><input id = "room" type="submit" name="roomnum" value="102호"></input></td>
+								<td><input id = "room" type="submit" name="roomnum" value="103호"></input></td>
 							</tr>
 							<tr>
-								<td class="2F">200호</td>								<td><input type="submit" name="roomnum" value="201호"></input></td>
-								<td><input type="submit" name="roomnum" value="202호"></input></td>
-								<td><input type="submit" name="roomnum" value="203호"></input></td>
+								<td class="2F">200호</td>								
+								<td><input id = "room" type="submit" name="roomnum" value="201호"></input></td>
+								<td><input id = "room" type="submit" name="roomnum" value="202호"></input></td>
+								<td><input id = "room" type="submit" name="roomnum" value="203호"></input></td>
 							</tr>
 							<tr>
 								<td class="3F">300호</td>
-								<td><input type="submit" name="roomnum" value="301호"></input></td>
-								<td><input type="submit" name="roomnum" value="302호"></input></td>
-								<td><input type="submit" name="roomnum" value="303호"></input></td>
+								<td><input id = "room" type="submit" name="roomnum" value="301호"></input></td>
+								<td><input id = "room" type="submit" name="roomnum" value="302호"></input></td>
+								<td><input id = "room" type="submit" name="roomnum" value="303호"></input></td>
 							</tr>
-						</form>
+						</form> -->
+						<tr>
+							<td class="1F">100호</td>
+							<td><input id="ho101" class="room" type="button" name="roomnum"
+								value="101호" onclick="roomcheck(101)"></input></td>
+							<td><input id="ho102"  class="room" type="button" name="roomnum"
+								value="102호" onclick="roomcheck(102)"></input></td>
+							<td><input id="ho103" class="room" type="button" name="roomnum"
+								value="103호" onclick="roomcheck(103)"></input></td>
+						</tr>
+						<tr>
+							<td class="2F">200호</td>
+							<td><input id="ho201" class="room" type="button" name="roomnum"
+								value="201호" onclick="roomcheck(201)"></input></td>
+							<td><input id="ho201" class="room" type="button" name="roomnum"
+								value="202호" onclick="roomcheck(202)"></input></td>
+							<td><input id="ho201" class="room" type="button" name="roomnum"
+								value="203호" onclick="roomcheck(203)"></input></td>
+						</tr>
+						<tr>
+							<td class="3F">300호</td>
+							<td><input id="ho301" class="room" type="button" name="roomnum"
+								value="301호" onclick="roomcheck(301)"></input></td>
+							<td><input id="ho302" class="room" type="button" name="roomnum"
+								value="302호" onclick="roomcheck(302)"></input></td>
+							<td><input id="ho303" class="room" type="button" name="roomnum"
+								value="303호" onclick="roomcheck(303)"></input></td>
+						</tr>
 					</table>
 
 					<div class="about_select">
@@ -106,6 +134,38 @@
 				</div>
 			</aside>
 		</div>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script type="text/javascript">
+			function roomcheck(num) {
+				$.ajax({
+							url : '/project333333/SelectRoom.do?roomnum=' + num,
+							success : function(result) {
+								if (confirm(num + "호를 신청 하시겠습니까?") == true) {
+									if (result=="true") {
+										alert("빈 방이 아닙니다.");
+									} else {
+										$.ajax({
+													url : '/project333333/InsertRoom.do?roomnum='
+															+ num,
+													success : function(data) {
+														var rom = 
+														alert(num+"방 신청 완료 되었습니다.")
+														
+														
+													},
+													error : function() {
+													}
+												}); 
+									}
+								} else {
+								}
+							},
+							error : function() {
+								console.log("실패")
+							}
+						});
+			}
+		</script>
 </body>
 
 </html>

@@ -14,11 +14,6 @@
 <body>
 	<div class="wrapper_admin">
 
-		<!-- <div class="header">
-    <div class="logo">Logo</div>
-    <div class="admin_name">æ»≥Á«œººø‰ OOO¥‘!</nav>
-    </div>
-    </div> -->
 		<div class="adminpage">
 			<div class="adminNav">
 				<div class="logo">Logo</div>

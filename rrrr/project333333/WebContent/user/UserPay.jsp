@@ -164,8 +164,8 @@ ArrayList<String> Eview = dao.room_wh(room);
 			</div>
 
 			<aside>
-				<button class="logout">
-					<a>LOGOUT</a>
+				<button class="logout" onClick="location.href='/project333333/main/MainPage.jsp'">
+					LOGOUT
 				</button>
 				<div class="profile">
 					<div class="profile_img">

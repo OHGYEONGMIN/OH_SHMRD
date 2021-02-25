@@ -32,6 +32,8 @@ public class memberservlet extends HttpServlet {
 		MemberDAO dao = new MemberDAO();
 		dao.insert(vo);
 		
+		response.sendRedirect("main/MainPage.jsp");
+		
 		
 		
 	}
