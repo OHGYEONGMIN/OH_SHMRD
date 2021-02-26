@@ -52,26 +52,6 @@
 					<table class="room_select_tbl">
 						<th class="floor">층</th>
 						<th class="roomnumber" colspan="3">방 번호</th>
-						<!-- <form method="post" action="/project333333/SelectRoom.do">
-							<tr>
-								<td class="1F">100호</td>
-								<td><input id = "room" type="submit" name="roomnum" value="101호"></input></td>
-								<td><input id = "room" type="submit" name="roomnum" value="102호"></input></td>
-								<td><input id = "room" type="submit" name="roomnum" value="103호"></input></td>
-							</tr>
-							<tr>
-								<td class="2F">200호</td>								
-								<td><input id = "room" type="submit" name="roomnum" value="201호"></input></td>
-								<td><input id = "room" type="submit" name="roomnum" value="202호"></input></td>
-								<td><input id = "room" type="submit" name="roomnum" value="203호"></input></td>
-							</tr>
-							<tr>
-								<td class="3F">300호</td>
-								<td><input id = "room" type="submit" name="roomnum" value="301호"></input></td>
-								<td><input id = "room" type="submit" name="roomnum" value="302호"></input></td>
-								<td><input id = "room" type="submit" name="roomnum" value="303호"></input></td>
-							</tr>
-						</form> -->
 						<tr>
 							<td class="1F">100호</td>
 							<td><input id="ho101" class="room" type="button" name="roomnum"

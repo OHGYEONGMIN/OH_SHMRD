@@ -8,7 +8,11 @@
 <%
 String room = (String) session.getAttribute("room");
 ElectricDAO dao = new ElectricDAO();
-ArrayList<String> Eview = dao.room_wh(room);
+ArrayList<String> perview = dao.wh_month_room(room);
+ArrayList<String> monthview = dao.wh_month(room);
+ArrayList<String> r1view = dao.wh_month_room1(room);
+ArrayList<String> r2view = dao.wh_month_room2(room);
+ArrayList<String> r3view = dao.wh_month_room3(room);
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,32 +26,54 @@ ArrayList<String> Eview = dao.room_wh(room);
 <style>
 </style>
 <body>
+
 	<%
-	int rm1 = Integer.parseInt(Eview.get(0));
-	int rm2 = Integer.parseInt(Eview.get(1));
-	int rm3 = Integer.parseInt(Eview.get(2));
-	int total = rm1 + rm2 + rm3;
-
-	Calculation cal = new Calculation();
-	int basicpay = cal.Calculater_basic(total);
-	int totalpay = cal.Calculater_total(total);
-	int taxpay = cal.Calculater_taxpay(total);
-	int fundpay = cal.Calculater_fundpay(total);
-
-	int room_num = Integer.parseInt(room.toString().substring(2));
-	int temp = 0;
-	if (room_num == 1) {
-		temp = rm1;
+	//전체사용량
+	int sumview = 0;
+	for (int i = 0; i < monthview.size(); i++) {
+		int a = Integer.parseInt(monthview.get(i));
+		sumview += a;
 	}
-	if (room_num == 2) {
-		temp = rm2;
+	//로그인한 개인사용량
+	int persum = 0;
+	for (int i = 0; i < perview.size(); i++) {
+		int a = Integer.parseInt(perview.get(i));
+		persum += a;
 	}
-	if (room_num == 3) {
-		temp = rm3;
+	//각 방 사용량
+	//room1
+	int room1 = 0;
+	for (int i = 0; i < r1view.size(); i++) {
+		int a = Integer.parseInt(r1view.get(i));
+		room1 += a;
 	}
-	int re = totalpay*temp/total;
-	%>
+	//room2
+	int room2 = 0;
+	for (int i = 0; i < r2view.size(); i++) {
+		int a = Integer.parseInt(r2view.get(i));
+		room2 += a;
+	}
+	//room3
+	int room3 = 0;
+	for (int i = 0; i < r3view.size(); i++) {
+		int a = Integer.parseInt(r3view.get(i));
+		room3 += a;
+	}
 	
+	
+	//요금계산
+	Calculation cal = new Calculation();
+	int basicpay = cal.Calculater_basic(sumview);
+	int totalpay = cal.Calculater_total(sumview);
+	int taxpay = cal.Calculater_taxpay(sumview);
+	int fundpay = cal.Calculater_fundpay(sumview);
+
+	//내 요금 계산
+	int total = totalpay * persum / sumview; 
+	
+	
+	%>
+
 	<div class="wrapper_admin">
 		<div class="adminpage">
 			<div class="adminNav">
@@ -91,7 +117,7 @@ ArrayList<String> Eview = dao.room_wh(room);
 						<tr>
 							<td>사용량</td>
 
-							<td><%=total%>Kwh</td>
+							<td><%=sumview%>Kwh</td>
 						</tr>
 						<th colspan="2">청구 금액</th>
 						<tr>
@@ -110,7 +136,7 @@ ArrayList<String> Eview = dao.room_wh(room);
 						<th colspan="2">전력산업 기반 기금</th>
 						<tr>
 							<td class="radius1">전력산업기반기금</td>
-							<td class="radius2"><%=fundpay%></td>
+							<td class="radius2"><%=fundpay%> 원</td>
 						</tr>
 					</table>
 				</div>
@@ -123,16 +149,16 @@ ArrayList<String> Eview = dao.room_wh(room);
 							<th>사용량</th>
 							<tr>
 								<td>Room 101</td>
-								<td><%=rm1%>Kwh</td>
+								<td><%=room1 %>Kwh</td>
 							</tr>
 							<tr>
 								<td>Room 102</td>
-								<td><%=rm2%>Kwh</td>
+								<td><%=room2 %>Kwh</td>
 							</tr>
 
 							<tr>
 								<td>Room 103</td>
-								<td><%=rm3%>Kwh</td>
+								<td><%=room3 %>Kwh</td>
 							</tr>
 							<tr>
 								<th class="radius1">전체 요금</th>
@@ -149,12 +175,12 @@ ArrayList<String> Eview = dao.room_wh(room);
 								<th>개인사용량</th>
 							</tr>
 							<tr>
-								<td><%=total%>Kwh</td>
-								<td><%=temp %>Kwh</td>
+								<td><%=sumview%>Kwh</td>
+								<td><%=persum%>Kwh</td>
 							</tr>
 							<tr>
 								<th>납부 금액</th>
-								<th><%=re %> 원</th>
+								<th><%=total %> 원</th>
 							</tr>
 						</table>
 					</div>
@@ -164,9 +190,9 @@ ArrayList<String> Eview = dao.room_wh(room);
 			</div>
 
 			<aside>
-				<button class="logout" onClick="location.href='/project333333/main/MainPage.jsp'">
-					LOGOUT
-				</button>
+				<button class="logout"
+					onClick="location.href='/project333333/main/MainPage.jsp'">
+					LOGOUT</button>
 				<div class="profile">
 					<div class="profile_img">
 						<img src="../image/man.png" class="about_img" alt="">

@@ -46,40 +46,8 @@ public class ElectricDAO {
 	}
 
 //-----------------------------닫기(Close) --------------------------
-	// ----------------각 방마다 전력 사용량(토탈) --------------------------
-	public ArrayList<String> room_wh(String room) {
-		ArrayList<String> selectwh = new ArrayList<String>();
-		try {
-			Calendar now = Calendar.getInstance();
-			String room_num = room.toString().substring(0, 1);
-			// 어제 계산
-//			int sday = now.get(Calendar.DAY_OF_MONTH) - 1;
-			String day = "20";
-			connect();
-			String sql = "select room,day,sum(use_wh) " + "from item_electiricuse " + "group by room,day "
-					+ "having room like ? and day like ?";
-			pst = conn.prepareStatement(sql);
-			pst.setString(1, room_num + "%");
-			pst.setString(2, "%" + day);
 
-			rs = pst.executeQuery();
-			while (rs.next()) {
-
-				String room_wh = rs.getString(3);
-
-				selectwh.add(room_wh);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			getClose();
-		}
-		return selectwh;
-
-	}
-	// -------------------------------------------------------------------
-
-	// ---------------------------하나하나 데이터 가져올때 -----------------------
+// ---------------------------하나하나 데이터 가져올때 -----------------------
 	public ArrayList<ElectricVO> Eview() {
 
 		ArrayList<ElectricVO> Eview = new ArrayList<ElectricVO>();
@@ -108,4 +76,301 @@ public class ElectricDAO {
 		}
 		return Eview;
 	}
+
+//---------------------------월 별 전력 표시(방별 통합) Userpay페이지 -----------------------
+	public ArrayList<String> wh_month(String room) {
+		ArrayList<String> selectwh = new ArrayList<String>();
+		try {
+			Calendar now = Calendar.getInstance();
+			String room_num = room.toString().substring(0, 1);
+			// 월계산
+			int mon = now.get(Calendar.MONTH) + 1;
+			// 0이 1월 9>10월
+			String month = "";
+			if (mon < 9) {
+				month = "0" + Integer.toString(mon);
+			} else {
+				month = Integer.toString(mon);
+			}
+			connect();
+			String sql = "select room,day,sum(use_wh) " + "from item_electiricuse " + "group by room,day "
+					+ "having room like ? and day like ?";
+			pst = conn.prepareStatement(sql);
+			pst.setString(1, room_num + "%");
+			pst.setString(2, "____" + month + "%");
+			rs = pst.executeQuery();
+			while (rs.next()) {
+
+				String room_wh = rs.getString(3);
+
+				selectwh.add(room_wh);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			getClose();
+		}
+		return selectwh;
+	}
+
+	// ---------------------------월 별 전력 표시(방별 통합) -----------------------
+	// ---------------------------월 별 전력 표시(방별 개인) Userpay페이지 -------------------
+	public ArrayList<String> wh_month_room(String room) {
+		ArrayList<String> selectwh = new ArrayList<String>();
+		try {
+			Calendar now = Calendar.getInstance();
+			String room_num_first = room.toString().substring(0, 1);
+			String room_num_end = room.toString().substring(2);
+			String month = "";
+			// 월계산
+			int mon = now.get(Calendar.MONTH) + 1;
+			// 0이 1월 9>10월
+			if (mon < 9) {
+				month = "0" + Integer.toString(mon);
+			} else {
+				month = Integer.toString(mon);
+			}
+			if (room_num_end.equals("1")) {
+				connect();
+				String sql = "select room,day,sum(use_wh) " + "from item_electiricuse " + "group by room,day "
+						+ "having room like ? and day like ?";
+				pst = conn.prepareStatement(sql);
+				pst.setString(1, room_num_first + "%" + room_num_end);
+				pst.setString(2, "____" + month + "%");
+				rs = pst.executeQuery();
+				while (rs.next()) {
+
+					String room_wh = rs.getString(3);
+					selectwh.add(room_wh);
+				}
+			} else if (room_num_end.equals("2")) {
+				connect();
+				String sql = "select room,day,sum(use_wh) " + "from item_electiricuse " + "group by room,day "
+						+ "having room like ? and day like ?";
+				pst = conn.prepareStatement(sql);
+				pst.setString(1, room_num_first + "%" + room_num_end);
+				pst.setString(2, "____" + month + "%");
+				rs = pst.executeQuery();
+				while (rs.next()) {
+
+					String room_wh = rs.getString(3);
+
+					selectwh.add(room_wh);
+				}
+			} else if (room_num_end.equals("3")) {
+				connect();
+				String sql = "select room,day,sum(use_wh) " + "from item_electiricuse " + "group by room,day "
+						+ "having room like ? and day like ?";
+				pst = conn.prepareStatement(sql);
+				pst.setString(1, room_num_first + "%" + room_num_end);
+				pst.setString(2, "____" + month + "%");
+				rs = pst.executeQuery();
+				while (rs.next()) {
+
+					String room_wh = rs.getString(3);
+
+					selectwh.add(room_wh);
+				}
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			getClose();
+		}
+		return selectwh;
+	}
+
+//---------------------------월 별 전력 표시(방별 개인) Userpay페이지 -------------------
+// ---------------------------월 별 전력 표시(다른방 보여주기) Userpay페이지 -------------------
+	// ---Room --1번 방들
+	public ArrayList<String> wh_month_room1(String room) {
+
+		ArrayList<String> selectwh = new ArrayList<String>();
+		try {
+			Calendar now = Calendar.getInstance();
+			String room_num = room.toString().substring(0, 1);
+			// 월계산
+			int mon = now.get(Calendar.MONTH) + 1;
+			// 0이 1월 9>10월
+			String month = "";
+			if (mon < 9) {
+				month = "0" + Integer.toString(mon);
+			} else {
+				month = Integer.toString(mon);
+			}
+			connect();
+			String sql = "select room,day,sum(use_wh) " + "from item_electiricuse " + "group by room,day "
+					+ "having room like ? and day like ?";
+			pst = conn.prepareStatement(sql);
+			pst.setString(1, room_num + "%" + 1);
+			pst.setString(2, "____" + month + "%");
+			rs = pst.executeQuery();
+			while (rs.next()) {
+
+				String room_wh = rs.getString(3);
+
+				selectwh.add(room_wh);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			getClose();
+		}
+		return selectwh;
+	}
+
+//---Room --2번 방들
+	public ArrayList<String> wh_month_room2(String room) {
+
+		ArrayList<String> selectwh = new ArrayList<String>();
+		try {
+			Calendar now = Calendar.getInstance();
+			String room_num = room.toString().substring(0, 1);
+			// 월계산
+			int mon = now.get(Calendar.MONTH) + 1;
+			// 0이 1월 9>10월
+			String month = "";
+			if (mon < 9) {
+				month = "0" + Integer.toString(mon);
+			} else {
+				month = Integer.toString(mon);
+			}
+			connect();
+			String sql = "select room,day,sum(use_wh) " + "from item_electiricuse " + "group by room,day "
+					+ "having room like ? and day like ?";
+			pst = conn.prepareStatement(sql);
+			pst.setString(1, room_num + "%" + 2);
+			pst.setString(2, "____" + month + "%");
+			rs = pst.executeQuery();
+			while (rs.next()) {
+
+				String room_wh = rs.getString(3);
+
+				selectwh.add(room_wh);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			getClose();
+		}
+		return selectwh;
+	}
+
+//---Room --3번 방들
+	public ArrayList<String> wh_month_room3(String room) {
+
+		ArrayList<String> selectwh = new ArrayList<String>();
+		try {
+			Calendar now = Calendar.getInstance();
+			String room_num = room.toString().substring(0, 1);
+			// 월계산
+			int mon = now.get(Calendar.MONTH) + 1;
+			// 0이 1월 9>10월
+			String month = "";
+			if (mon < 9) {
+				month = "0" + Integer.toString(mon);
+			} else {
+				month = Integer.toString(mon);
+			}
+			connect();
+			String sql = "select room,day,sum(use_wh) " + "from item_electiricuse " + "group by room,day "
+					+ "having room like ? and day like ?";
+			pst = conn.prepareStatement(sql);
+			pst.setString(1, room_num + "%" + 3);
+			pst.setString(2, "____" + month + "%");
+			rs = pst.executeQuery();
+			while (rs.next()) {
+
+				String room_wh = rs.getString(3);
+
+				selectwh.add(room_wh);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			getClose();
+		}
+		return selectwh;
+	}
+
+	// ---Room --3번 방들 ---------방 end
+	// -------------------------아이템 별 사용량!!-----------------------------------------
+	// 방에 따른 LAD 사용량-------------------------------------------
+	public String wh_item_LAD(String room, String yy, String mm, String dd) {
+
+		String LAD = "";
+		try {
+			connect();
+			String sql = "select room,item_name,day,use_wh from item_electiricuse where room = ? and day = ? and item_name = 'LAD' ";
+			pst = conn.prepareStatement(sql);
+			pst.setString(1, room);
+			pst.setString(2, yy + mm + dd);
+			rs = pst.executeQuery();
+			while (rs.next()) {
+
+				String room_wh = rs.getString(4);
+
+				LAD = room_wh;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			getClose();
+		}
+		return LAD;
+	}
+
+	// 방에 따른 LBD 사용량-------------------------------------------
+	public String wh_item_LBD(String room, String yy, String mm, String dd) {
+
+		String LBD = "";
+		try {
+			connect();
+			String sql = "select room,item_name,day,use_wh from item_electiricuse where room = ? and day = ? and item_name = 'LBD' ";
+
+			pst = conn.prepareStatement(sql);
+			pst.setString(1, room);
+			pst.setString(2, yy + mm + dd);
+			rs = pst.executeQuery();
+			while (rs.next()) {
+
+				String room_wh = rs.getString(4);
+
+				LBD = room_wh;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			getClose();
+		}
+		return LBD;
+	}
+
+	// 방에 따른 LCD 사용량-------------------------------------------
+	public String wh_item_LCD(String room, String yy, String mm, String dd) {
+
+		String LCD = "";
+		try {
+			connect();
+			String sql = "select room,item_name,day,use_wh from item_electiricuse where room = ? and day = ? and item_name = 'LCD' ";
+
+			pst = conn.prepareStatement(sql);
+			pst.setString(1, room);
+			pst.setString(2, yy + mm + dd);
+			rs = pst.executeQuery();
+			while (rs.next()) {
+
+				String room_wh = rs.getString(4);
+
+				LCD = room_wh;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			getClose();
+		}
+		return LCD;
+	}
+
 }

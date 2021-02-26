@@ -1,12 +1,17 @@
 package CalculationE;
 
+import java.util.Calendar;
+
 public class ChangeMonth {
 	
 	public int ChangeMonth(String Emonth) {
-		int Cmonth = 0;
+		return 0;
+		
 		
 
-		return Cmonth;
+				
+	}
+	public static void main(String[] args) {
 	}
 
 }
