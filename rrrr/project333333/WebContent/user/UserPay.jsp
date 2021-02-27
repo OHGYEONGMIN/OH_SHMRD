@@ -59,6 +59,12 @@ ArrayList<String> r3view = dao.wh_month_room3(room);
 		int a = Integer.parseInt(r3view.get(i));
 		room3 += a;
 	}
+	//계산편하게 하기
+	sumview = sumview/10;
+	persum = persum/10;
+	room1 = room1/10;
+	room2 = room2/10;
+	room3 = room3/10;
 	
 	
 	//요금계산
@@ -69,7 +75,7 @@ ArrayList<String> r3view = dao.wh_month_room3(room);
 	int fundpay = cal.Calculater_fundpay(sumview);
 
 	//내 요금 계산
-	int total = totalpay * persum / sumview; 
+	int total = (totalpay * persum) / sumview; 
 	
 	
 	%>

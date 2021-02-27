@@ -38,8 +38,7 @@ public class LoginServlet extends HttpServlet {
 			session.setAttribute("room", room);
 			session.setAttribute("dd", dd);
 			System.out.println("로그인완료!!");;
-			System.out.println(room.toString().substring(2));
-			System.out.println(room);
+			System.out.println("방번호" + room);
 			System.out.println("로그인날짜:"+dd);
 			if(id.equals("admin")) {
 				response.sendRedirect("admin/AdminTotalPower.jsp");

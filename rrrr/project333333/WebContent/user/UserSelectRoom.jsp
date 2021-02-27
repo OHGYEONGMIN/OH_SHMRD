@@ -128,7 +128,6 @@
 													url : '/project333333/InsertRoom.do?roomnum='
 															+ num,
 													success : function(data) {
-														var rom = 
 														alert(num+"방 신청 완료 되었습니다.")
 														
 														

@@ -11,7 +11,12 @@ var logclose = document.querySelector('.login-close');
 var cancel = document.querySelector('.cancel');
 
 cancel.addEventListener('click',function(){
-	modalBg.classList.remove('bg-active')
+   modalBg.classList.remove('bg-active')
+})
+var cancel2 = document.querySelector('.cancel2');
+
+cancel2.addEventListener('click',function(){
+    modallg.classList.remove('lg-active')
 })
 
 modalBtn.addEventListener('click', function(){
@@ -29,7 +34,31 @@ logclose.addEventListener('click',function(){
     modallg.classList.remove('lg-active');
 })
 
+let id=$('.id');
+let pw=$('.pw');
+let name=$('.name');
+let btn=$('.btn');
 
-
+$(btn).on('click',function(){
+    if($(id).val()==""){
+        $(id).next('label').addClass('warning');
+        setTimeout(function(){
+            $('label').removeClass('warning');
+        },1500);
+    }
+    else if($(pw).val()==''){
+        $(pw).next('label').addClass('warning');
+        setTimeout(function(){
+            $('label').removeClass('warning');
+        },1500);
+    }
+    else if($(name).val()==''){
+        $(name).next('label').addClass('warning');
+        setTimeout(function(){
+            $('label').removeClass('warning');
+        },1500);
+    }
+    
+});
 
 

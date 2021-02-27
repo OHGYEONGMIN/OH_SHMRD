@@ -8,6 +8,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="../CSS/style.css" rel="stylesheet">
 <link href="../CSS/calender.css" rel="stylesheet">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css">
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 
 <title>Userpage_전력소비량</title>
@@ -15,6 +19,7 @@
 <style>
 </style>
 <body>
+
 	<div class="wrapper_admin">
 		<div class="adminpage">
 			<div class="adminNav">
@@ -52,7 +57,7 @@
 								<button type="button" title="next" class="btn-cal next">
 								</button>
 							</div>
-							<table class="cal-table">
+							<table class="cal-table" style="height:100px">
 								<thead>
 									<tr>
 										<th>S</th>
@@ -71,8 +76,16 @@
 
 
 				</div>
-				<div class="electric_yesterday">어제 전력 소비량</div>
-				<div class="electric_week">주별 전력 소비량</div>
+				<div class="electric_yesterday">
+					<div class="chart-div">
+						<canvas id="pieChartCanvas" width="300px" height="300px"></canvas>
+					</div>
+				</div>
+				<div class="electric_week">
+					<div class="chart-div" >
+						<canvas id="barChartCanvas" width="700px" height="320px"></canvas>
+					</div>
+				</div>
 			</div>
 
 			<aside>
@@ -93,6 +106,6 @@
 				</div>
 			</aside>
 		</div>
-		<script src="../JS/calender.js"></script>
+		<script src="../JS/calender.js" charset="UTF-8"></script>
 </body>
 </html>

@@ -373,4 +373,31 @@ public class ElectricDAO {
 		return LCD;
 	}
 
+//---------------------------------일주일 데이터 뽑는 곳 ----------------------------------
+	public ArrayList<String> wh_week(String room,String yy, String mm, String dd) {
+
+		ArrayList<String> week = new ArrayList<String>();
+		
+		try {
+			connect();
+			String sql = "select room,day,use_wh from item_electiricuse where room = ? and day = ?";
+
+			pst = conn.prepareStatement(sql);
+			pst.setString(1, room);
+			pst.setString(2, yy + mm + dd);
+			rs = pst.executeQuery();
+			while (rs.next()) {
+
+				String room_wh = rs.getString(3);
+
+				week.add(room_wh);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			getClose();
+		}
+		return week;
+
+	}
 }
