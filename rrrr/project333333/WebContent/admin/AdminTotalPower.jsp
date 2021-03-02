@@ -1,56 +1,97 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="../CSS/style.css" rel="stylesheet">
-<title>mainpage</title>
-</head>
+<link href="../CSS/calendar.css" rel="stylesheet">
+<link href="../CSS/icon.css" rel="stylesheet">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css">
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js" charset="UTF-8"></script>
+<script src="http://code.jquery.com/jquery-latest.js" charset="UTF-8"></script>
 
+<title>AdminPage_전력소비량</title>
+</head>
+<style>
+</style>
 <body>
+
 	<div class="wrapper_admin">
 		<div class="adminpage">
-			<div class="adminNav">
-				<div class="logo">Logo</div>
-				<a href="AdminTotalPower.jsp">
-					<div class="link">
-						<img src="../image/setting.png" width="20px">
-						<h2>전력소비량</h2>
-					</div> <a href="AdminSection.jsp">
-						<div class="link">
-							<img src="../image/setting.png" width="20px">
-							<h2>구역별 소비량</h2>
-						</div>
-				</a> <a href="AdminTotalPay.jsp">
-						<div class="link">
-							<img src="../image/setting.png" width="20px">
-							<h2>납부관리</h2>
-						</div>
-				</a> <a href="AdminNotice.jsp">
-						<div class="link">
-							<img src="../image/setting.png" width="20px">
-							<h2>게시판</h2>
-						</div>
-				</a> <a href="approve.jsp">
-						<div class="link">
-							<img src="../image/setting.png" width="20px">
-							<h2>가입승인</h2>
-						</div>
-				</a>
-			</div>
+			   <div class="adminNav">
+                <div class="logo">
+                    <a href="adminpage1.html" class="logoitem"><i class="fas fa-home fa-3x">Enf</i></a>
+                </div>
+                <div class="list_group">
+                    <div class="menu">
+                        <a href="adminpage1.html" class="navitem"><i class="fas fa-charging-station fa-2x"></i>&nbsp; 전력
+                            소비량</a>
+                    </div>
+                    <div class="menu">
+                        <a href="adminpage2.html" class="navitem"><i class="fas fa-chart-line fa-2x"></i>&nbsp; 구역별
+                            소비량</a>
+                    </div>
+                    <div class="menu">
+                        <a href="adminpage3_userpay.html" class="navitem"><i
+                                class="fas fa-hand-holding-usd fa-2x"></i>&nbsp; 납부 관리</a>
+                    </div>
+                    <div class="menu">
+                        <a href="adminpage4_list.html" class="navitem"><i class="far fa-comment-dots fa-2x"></i>&nbsp;
+                            게시판</a>
+                    </div>
+                    <div class="menu">
+                        <a href="adminpage5_approve.html" class="navitem"><i class="fas fa-users-cog fa-2x"></i>&nbsp;
+                            회원 승인</a>
+                    </div>
+                </div>
+            </div>
+
 			<div class="chart_electric">
-				<div class="electric_month">월별 전력 소비량</div>
-				<div class="electric_yesterday">어제 전력 소비량</div>
-				<div class="electric_week">주별</div>
+				<div class="electric_month">
+					<div class="my-calendar">
+						<div class="calendar-box">
+							<div class="ctr-box">
+								<button type="button" title="prev" class="btn-cal prev">
+								</button>
+								<span class="cal-month"></span> <span class="cal-year"></span>
+								<button type="button" title="next" class="btn-cal next">
+								</button>
+							</div>
+							<table class="cal-table" style="height:100px">
+								<thead>
+									<tr>
+										<th>S</th>
+										<th>M</th>
+										<th>T</th>
+										<th>W</th>
+										<th>T</th>
+										<th>F</th>
+										<th>S</th>
+									</tr>
+								</thead>
+								<tbody class="cal-body"></tbody>
+							</table>
+						</div>
+					</div>
+
+
+				</div>
+				<div class="electric_yesterday">
+					<div class="chart-div">
+						<canvas id="pieChartCanvas" width="300px" height="300px"></canvas>
+					</div>
+				</div>
+				<div class="electric_week">
+					<div class="chart-div" >
+						<canvas id="barChartCanvas" width="700px" height="320px"></canvas>
+					</div>
+				</div>
 			</div>
-
-			<!-- <button class="logout" type="text" value="LOGOUT"> -->
-
 
 			<aside>
 				<button class="logout">로그아웃</button>
@@ -69,10 +110,8 @@
 					<div class="alert4">4</div>
 				</div>
 			</aside>
-
 		</div>
-
-	</div>
+		<script src="../JS/AdminCalendar.js" charset="UTF-8"></script>
+		<script src="../JS/icon.js" charset="UTF-8"></script>
 </body>
-
 </html>

@@ -7,12 +7,13 @@
 	pageEncoding="EUC-KR"%>
 <%
 String room = (String) session.getAttribute("room");
+String mm = (String) session.getAttribute("mm");
 ElectricDAO dao = new ElectricDAO();
-ArrayList<String> perview = dao.wh_month_room(room);
-ArrayList<String> monthview = dao.wh_month(room);
-ArrayList<String> r1view = dao.wh_month_room1(room);
-ArrayList<String> r2view = dao.wh_month_room2(room);
-ArrayList<String> r3view = dao.wh_month_room3(room);
+ArrayList<String> perview = dao.wh_month_room(room, mm);
+ArrayList<String> monthview = dao.wh_month(room, mm);
+ArrayList<String> r1view = dao.wh_month_room1(room, mm);
+ArrayList<String> r2view = dao.wh_month_room2(room, mm);
+ArrayList<String> r3view = dao.wh_month_room3(room, mm);
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,6 +22,7 @@ ArrayList<String> r3view = dao.wh_month_room3(room);
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="../CSS/style.css" rel="stylesheet">
+<link href="../CSS/icon.css" rel="stylesheet">
 <title>납부 관리</title>
 </head>
 <style>
@@ -60,13 +62,12 @@ ArrayList<String> r3view = dao.wh_month_room3(room);
 		room3 += a;
 	}
 	//계산편하게 하기
-	sumview = sumview/10;
-	persum = persum/10;
-	room1 = room1/10;
-	room2 = room2/10;
-	room3 = room3/10;
-	
-	
+	/* 	sumview = sumview/10;
+		persum = persum/10;
+		room1 = room1/10;
+		room2 = room2/10;
+		room3 = room3/10; */
+
 	//요금계산
 	Calculation cal = new Calculation();
 	int basicpay = cal.Calculater_basic(sumview);
@@ -75,40 +76,38 @@ ArrayList<String> r3view = dao.wh_month_room3(room);
 	int fundpay = cal.Calculater_fundpay(sumview);
 
 	//내 요금 계산
-	int total = (totalpay * persum) / sumview; 
-	
-	
+	int total = (totalpay * persum) / sumview;
 	%>
 
 	<div class="wrapper_admin">
 		<div class="adminpage">
 			<div class="adminNav">
-				<div class="logo">Logo</div>
-				<a href="UserTotalPower.jsp">
-					<div class="link">
-						<img src="../image/setting.png" width="20px">
-						<h2>전력소비량</h2>
-					</div> <a href="UserSection.jsp">
-						<div class="link">
-							<img src="../image/setting.png" width="20px">
-							<h2>구역별 소비량</h2>
-						</div>
-				</a> <a href="UserPay.jsp">
-						<div class="link">
-							<img src="../image/setting.png" width="20px">
-							<h2>납부관리</h2>
-						</div>
-				</a> <a href="UserNotice.jsp">
-						<div class="link">
-							<img src="../image/setting.png" width="20px">
-							<h2>게시판</h2>
-						</div>
-				</a> <a href="userpage5_chooseroom.html">
-						<div class="link">
-							<img src="/Page/image/setting.png" width="20px">
-							<h2>방 선택</h2>
-						</div>
-				</a>
+				<div class="logo">
+					<a href="adminpage1.html" class="logoitem"><i
+						class="fas fa-home fa-3x">Enf</i></a>
+				</div>
+				<div class="list_group">
+					<div class="menu">
+						<a href="adminpage1.html" class="navitem"><i
+							class="fas fa-charging-station fa-2x"></i>&nbsp; 전력 소비량</a>
+					</div>
+					<div class="menu">
+						<a href="adminpage2.html" class="navitem"><i
+							class="fas fa-chart-line fa-2x"></i>&nbsp; 구역별 소비량</a>
+					</div>
+					<div class="menu">
+						<a href="adminpage3_userpay.html" class="navitem"><i
+							class="fas fa-hand-holding-usd fa-2x"></i>&nbsp; 납부 관리</a>
+					</div>
+					<div class="menu">
+						<a href="adminpage4_list.html" class="navitem"><i
+							class="far fa-comment-dots fa-2x"></i>&nbsp; 게시판</a>
+					</div>
+					<div class="menu">
+						<a href="adminpage5_approve.html" class="navitem"><i
+							class="fas fa-users-cog fa-2x"></i>&nbsp; 회원 승인</a>
+					</div>
+				</div>
 			</div>
 			<div class="chart_usage">
 				<div class="table">
@@ -155,16 +154,16 @@ ArrayList<String> r3view = dao.wh_month_room3(room);
 							<th>사용량</th>
 							<tr>
 								<td>Room 101</td>
-								<td><%=room1 %>Kwh</td>
+								<td><%=room1%>Kwh</td>
 							</tr>
 							<tr>
 								<td>Room 102</td>
-								<td><%=room2 %>Kwh</td>
+								<td><%=room2%>Kwh</td>
 							</tr>
 
 							<tr>
 								<td>Room 103</td>
-								<td><%=room3 %>Kwh</td>
+								<td><%=room3%>Kwh</td>
 							</tr>
 							<tr>
 								<th class="radius1">전체 요금</th>
@@ -186,7 +185,7 @@ ArrayList<String> r3view = dao.wh_month_room3(room);
 							</tr>
 							<tr>
 								<th>납부 금액</th>
-								<th><%=total %> 원</th>
+								<th><%=total%> 원</th>
 							</tr>
 						</table>
 					</div>
@@ -216,6 +215,8 @@ ArrayList<String> r3view = dao.wh_month_room3(room);
 			</aside>
 		</div>
 	</div>
+	<script src="../JS/monthreset.js" charset="UTF-8"></script>
+	<script src="../JS/icon.js" charset="UTF-8"></script>
 </body>
 
 </html>

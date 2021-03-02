@@ -15,34 +15,33 @@
 	<div class="wrapper_admin">
 
 		<div class="adminpage">
-			<div class="adminNav">
-				<div class="logo">Logo</div>
-				<a href="adminpage1.html">
-					<div class="link">
-						<img src="../image/setting.png" width="20px">
-						<h2>전력소비량</h2>
-					</div> <a href="adminpage2.html">
-						<div class="link">
-							<img src="../image/setting.png" width="20px">
-							<h2>구역별 소비량</h2>
-						</div>
-				</a> <a href="adminpage3.html">
-						<div class="link">
-							<img src="../image/setting.png" width="20px">
-							<h2>납부관리</h2>
-						</div>
-				</a> <a href="adminpage4_list.html">
-						<div class="link">
-							<img src="../image/setting.png" width="20px">
-							<h2>게시판</h2>
-						</div>
-				</a> <a href="adminpage5.html">
-						<div class="link">
-							<img src="../image/setting.png" width="20px">
-							<h2>가입승인</h2>
-						</div>
-				</a>
-			</div>
+			   <div class="adminNav">
+                <div class="logo">
+                    <a href="adminpage1.html" class="logoitem"><i class="fas fa-home fa-3x">Enf</i></a>
+                </div>
+                <div class="list_group">
+                    <div class="menu">
+                        <a href="adminpage1.html" class="navitem"><i class="fas fa-charging-station fa-2x"></i>&nbsp; 전력
+                            소비량</a>
+                    </div>
+                    <div class="menu">
+                        <a href="adminpage2.html" class="navitem"><i class="fas fa-chart-line fa-2x"></i>&nbsp; 구역별
+                            소비량</a>
+                    </div>
+                    <div class="menu">
+                        <a href="adminpage3_userpay.html" class="navitem"><i
+                                class="fas fa-hand-holding-usd fa-2x"></i>&nbsp; 납부 관리</a>
+                    </div>
+                    <div class="menu">
+                        <a href="adminpage4_list.html" class="navitem"><i class="far fa-comment-dots fa-2x"></i>&nbsp;
+                            게시판</a>
+                    </div>
+                    <div class="menu">
+                        <a href="adminpage5_approve.html" class="navitem"><i class="fas fa-users-cog fa-2x"></i>&nbsp;
+                            회원 승인</a>
+                    </div>
+                </div>
+            </div>
 			<div class="chart_board_content">
 				<div>게시판</div>
 				<div>게시물 제목</div>
@@ -70,5 +69,6 @@
 				</div>
 			</aside>
 		</div>
+		<script src="../JS/icon.js" charset="UTF-8"></script>
 </body>
 </html>

@@ -36,7 +36,6 @@ public class DateServlet extends HttpServlet {
 //		System.out.println("yy = "+yy);
 //		System.out.println("mm = "+mm);
 //		System.out.println("dd = "+dd);
-		
 		//각각 하루에 각각 기기마다의 전기사용량
 		ElectricDAO dao = new ElectricDAO();
 		String LAD = dao.wh_item_LAD(room, yy, mm, dd);

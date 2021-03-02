@@ -23,7 +23,10 @@ public class LoginServlet extends HttpServlet {
 		
 		Calendar cal = Calendar.getInstance();
 		int day = cal.get(Calendar.DAY_OF_MONTH);
+		int month = cal.get(Calendar.MONTH)+1;
+		System.out.println(month);
 		String dd = Integer.toString(day);
+		String mm = Integer.toString(month);
 
 		
 		
@@ -37,6 +40,7 @@ public class LoginServlet extends HttpServlet {
 			session.setAttribute("id", id);
 			session.setAttribute("room", room);
 			session.setAttribute("dd", dd);
+			session.setAttribute("mm", mm);
 			System.out.println("로그인완료!!");;
 			System.out.println("방번호" + room);
 			System.out.println("로그인날짜:"+dd);

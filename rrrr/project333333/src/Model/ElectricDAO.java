@@ -78,13 +78,12 @@ public class ElectricDAO {
 	}
 
 //---------------------------월 별 전력 표시(방별 통합) Userpay페이지 -----------------------
-	public ArrayList<String> wh_month(String room) {
+	public ArrayList<String> wh_month(String room, String mm) {
 		ArrayList<String> selectwh = new ArrayList<String>();
 		try {
-			Calendar now = Calendar.getInstance();
 			String room_num = room.toString().substring(0, 1);
 			// 월계산
-			int mon = now.get(Calendar.MONTH) + 1;
+			int mon = Integer.parseInt(mm);
 			// 0이 1월 9>10월
 			String month = "";
 			if (mon < 9) {
@@ -115,15 +114,14 @@ public class ElectricDAO {
 
 	// ---------------------------월 별 전력 표시(방별 통합) -----------------------
 	// ---------------------------월 별 전력 표시(방별 개인) Userpay페이지 -------------------
-	public ArrayList<String> wh_month_room(String room) {
+	public ArrayList<String> wh_month_room(String room, String mm) {
 		ArrayList<String> selectwh = new ArrayList<String>();
 		try {
-			Calendar now = Calendar.getInstance();
 			String room_num_first = room.toString().substring(0, 1);
 			String room_num_end = room.toString().substring(2);
 			String month = "";
 			// 월계산
-			int mon = now.get(Calendar.MONTH) + 1;
+			int mon = Integer.parseInt(mm);
 			// 0이 1월 9>10월
 			if (mon < 9) {
 				month = "0" + Integer.toString(mon);
@@ -184,14 +182,13 @@ public class ElectricDAO {
 //---------------------------월 별 전력 표시(방별 개인) Userpay페이지 -------------------
 // ---------------------------월 별 전력 표시(다른방 보여주기) Userpay페이지 -------------------
 	// ---Room --1번 방들
-	public ArrayList<String> wh_month_room1(String room) {
+	public ArrayList<String> wh_month_room1(String room,String mm) {
 
 		ArrayList<String> selectwh = new ArrayList<String>();
 		try {
-			Calendar now = Calendar.getInstance();
 			String room_num = room.toString().substring(0, 1);
 			// 월계산
-			int mon = now.get(Calendar.MONTH) + 1;
+			int mon = Integer.parseInt(mm);
 			// 0이 1월 9>10월
 			String month = "";
 			if (mon < 9) {
@@ -221,14 +218,13 @@ public class ElectricDAO {
 	}
 
 //---Room --2번 방들
-	public ArrayList<String> wh_month_room2(String room) {
+	public ArrayList<String> wh_month_room2(String room, String mm) {
 
 		ArrayList<String> selectwh = new ArrayList<String>();
 		try {
-			Calendar now = Calendar.getInstance();
 			String room_num = room.toString().substring(0, 1);
 			// 월계산
-			int mon = now.get(Calendar.MONTH) + 1;
+			int mon = Integer.parseInt(mm);
 			// 0이 1월 9>10월
 			String month = "";
 			if (mon < 9) {
@@ -258,14 +254,13 @@ public class ElectricDAO {
 	}
 
 //---Room --3번 방들
-	public ArrayList<String> wh_month_room3(String room) {
+	public ArrayList<String> wh_month_room3(String room, String mm) {
 
 		ArrayList<String> selectwh = new ArrayList<String>();
 		try {
-			Calendar now = Calendar.getInstance();
 			String room_num = room.toString().substring(0, 1);
 			// 월계산
-			int mon = now.get(Calendar.MONTH) + 1;
+			int mon = Integer.parseInt(mm);
 			// 0이 1월 9>10월
 			String month = "";
 			if (mon < 9) {
@@ -400,4 +395,24 @@ public class ElectricDAO {
 		return week;
 
 	}
+	
+//---------------------------일 병 모든 방의 데이터(관리자페이지, 파이차트 용 )------------------
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
