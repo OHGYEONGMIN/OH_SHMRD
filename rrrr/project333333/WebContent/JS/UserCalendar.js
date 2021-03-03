@@ -183,13 +183,16 @@ var myBarChart = new Chart(ctx2, {
 	data: {
 		labels: ["월", "화", "수", "목", "금", "토", "일"],
 		datasets: [{
-			label: '주간 전력량 데이터',
+		
 			data: [10, 20, 30, 40, 50, 60, 70],
 			backgroundColor: ["rgba(255,1,1,0.5)", "rgba(255,100,100,0.5)", "rgba(255,200,200,0.5)", "rgba(1,255,1,0.5)",
 				"rgba(100,255,100,0.5)", "rgba(1,1,255,0.5)", "rgba(100,100,255,0.5)"],
 		}]
 	},
 	options: {
+		legend:{
+								display:false
+							},
 		hover: {
 			mode: 'index'
 		},
@@ -261,7 +264,7 @@ $calBody.addEventListener('click', (e) => {
 
 
 
-
+//파이차트
 					let ctx = document.getElementById('pieChartCanvas').getContext('2d');
 					chart.destroy();
 
@@ -279,7 +282,7 @@ $calBody.addEventListener('click', (e) => {
 						options: {}
 					});
 
-
+//바차트
 					let ctx2 = document.getElementById('barChartCanvas').getContext('2d');
 					myBarChart.destroy();
 					myBarChart = new Chart(ctx2, {
@@ -287,29 +290,39 @@ $calBody.addEventListener('click', (e) => {
 						data: {
 							labels: [arrString[0] + "일", arrString[1] + "일", arrString[2] + "일", arrString[3] + "일", arrString[4] + "일", arrString[5] + "일", arrString[6] + "일"],
 							datasets: [{
-								label: '주간 전력량 데이터',
 								data: [data.dm0, data.dm1, data.dm2, data.dm3, data.dm4, data.dm5, data.dm6],
 								backgroundColor: ["rgba(255,1,1,0.5)", "rgba(255,100,100,0.5)", "rgba(255,200,200,0.5)", "rgba(1,255,1,0.5)",
 									"rgba(100,255,100,0.5)", "rgba(1,1,255,0.5)", "rgba(100,100,255,0.5)"],
 							}]
 						},
 						options: {
+							legend:{
+								display:false
+							},
 							hover: {
 								mode: 'index'
 							},
 							responsive: false,
 							scales: {
 								xAxes: [{
+									ticks:{
+										fontColor:"rgba(225,225,225)",
+										fontSize:20
+									},
 									gridLines: {
 										color: "rgba(0,0,0,0)"
-									}
+																			}
 								}],
 								yAxes: [{
+									
 									gridLines: {
 										color: "rgba(0,0,0,0)"
 									},
 									ticks: {
 										beginAtZero: true,
+										stepSize:40,
+										fontColor:"rgba(225,225,225)",
+										fontSize:20
 									}
 								}]
 							}

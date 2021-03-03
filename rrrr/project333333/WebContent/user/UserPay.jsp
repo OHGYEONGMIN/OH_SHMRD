@@ -83,29 +83,29 @@ ArrayList<String> r3view = dao.wh_month_room3(room, mm);
 		<div class="adminpage">
 			<div class="adminNav">
 				<div class="logo">
-					<a href="adminpage1.html" class="logoitem"><i
+					<a href="UserTotalPower.jsp" class="logoitem"><i
 						class="fas fa-home fa-3x">Enf</i></a>
 				</div>
 				<div class="list_group">
 					<div class="menu">
-						<a href="adminpage1.html" class="navitem"><i
+						<a href="UserTotalPower.jsp" class="navitem"><i
 							class="fas fa-charging-station fa-2x"></i>&nbsp; 전력 소비량</a>
 					</div>
 					<div class="menu">
-						<a href="adminpage2.html" class="navitem"><i
+						<a href="UserSection.jsp" class="navitem"><i
 							class="fas fa-chart-line fa-2x"></i>&nbsp; 구역별 소비량</a>
 					</div>
 					<div class="menu">
-						<a href="adminpage3_userpay.html" class="navitem"><i
+						<a href="UserPay.jsp" class="navitem"><i
 							class="fas fa-hand-holding-usd fa-2x"></i>&nbsp; 납부 관리</a>
 					</div>
 					<div class="menu">
-						<a href="adminpage4_list.html" class="navitem"><i
+						<a href="/project333333/BoardList.do" class="navitem"><i
 							class="far fa-comment-dots fa-2x"></i>&nbsp; 게시판</a>
 					</div>
 					<div class="menu">
-						<a href="adminpage5_approve.html" class="navitem"><i
-							class="fas fa-users-cog fa-2x"></i>&nbsp; 회원 승인</a>
+						<a href="UserSelectRoom.jsp" class="navitem"><i
+							class="fas fa-users-cog fa-2x"></i>&nbsp; 방 선택</a>
 					</div>
 				</div>
 			</div>

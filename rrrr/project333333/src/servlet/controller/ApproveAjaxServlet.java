@@ -1,8 +1,6 @@
 package servlet.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,30 +9,31 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import Model.MemberDAO;
-import Model.TempMemberDAO;
 
-@WebServlet("/InsertRoom.do")
-public class InsertRoomServlet extends HttpServlet {
-	protected void service(HttpServletRequest request, HttpServletResponse response) 
-			throws ServletException, IOException {
+@WebServlet("/Approve.do")
+public class ApproveAjaxServlet extends HttpServlet {
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		response.setContentType("text/html;charset=EUC-KR");
 		request.setCharacterEncoding("EUC-KR");
 		
-		String roomnum = request.getParameter("roomnum");
-		
 		HttpSession session = request.getSession();
 		String id = (String)session.getAttribute("id");
-		
+	
+		//--------------规 倾啊 --------------------------
 		MemberDAO dao = new MemberDAO();
+		String accept = request.getParameter("accept");
+		String num = request.getParameter("num");
+		if(accept.equals("2")) {
+			//规 铰牢
+			dao.roomappro(num,accept);
+		}else if(accept.equals("0")) {
+			//规 秒家
+			dao.roomreset(num,accept);
+		}
 		
-		
-		//--------------规脚没-------------------
-		int Insertroom = dao.roomupdate(id, roomnum);
-		PrintWriter out = response.getWriter();
-		out.print(Insertroom);
-		
-		
-		
+		response.sendRedirect("admin/AdminApprove.jsp");
+	
 	}
 
 }

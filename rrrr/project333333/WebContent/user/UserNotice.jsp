@@ -1,6 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,188 +11,297 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- <link href="./Project3_css/approve.css" rel="stylesheet"> -->
-<link href="../CSS/icon.css" rel="stylesheet">
-<link href="../CSS/style.css" rel="stylesheet">
+<link href="/project333333/CSS/icon.css" rel="stylesheet">
+<link href="/project333333/CSS/style.css" rel="stylesheet">
 <script src="https://kit.fontawesome.com/377e1f4283.js"
-   crossorigin="anonymous"></script>
-<title>∞‘Ω√π∞ ≥ªøÎ</title>
+	crossorigin="anonymous"></script>
+<title>Í≤åÏãúÎ¨º ÎÇ¥Ïö©</title>
+<style>
+.tg {
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 100%;
+	color: white;
+}
+
+.tg td {
+	border-color: black;
+	border-style: solid;
+	border-width: 1px;
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	overflow: hidden;
+	padding: 10px 5px;
+	word-break: normal;
+	color: white;
+}
+
+.tg th {
+	border-color: black;
+	border-style: solid;
+	border-width: 1px;
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	overflow: hidden;
+	padding: 10px 5px;
+	word-break: normal;
+	color: white;
+}
+
+.tg .tg-cjtp {
+	background-color: #ecf4ff;
+	border-color: inherit;
+	text-align: center;
+	vertical-align: top color: white;
+}
+
+.tg .tg-0pky {
+	border-color: inherit;
+	text-align: left;
+	vertical-align: top color: white;
+}
+</style>
 </head>
 
 <body>
-   <div class="wrapper_admin">
-      <div class="adminpage">
-         <div class="adminNav">
-            <div class="logo">
-               <a href="adminpage1.html" class="logoitem"><i
-                  class="fas fa-home fa-3x">Enf</i></a>
-            </div>
-            <div class="list_group">
-               <div class="menu">
-                  <a href="adminpage1.html" class="navitem"><i
-                     class="fas fa-charging-station fa-2x"></i>&nbsp; ¿¸∑¬ º“∫Ò∑Æ</a>
-               </div>
-               <div class="menu">
-                  <a href="adminpage2.html" class="navitem"><i
-                     class="fas fa-chart-line fa-2x"></i>&nbsp; ±∏ø™∫∞ º“∫Ò∑Æ</a>
-               </div>
-               <div class="menu">
-                  <a href="adminpage3_userpay.html" class="navitem"><i
-                     class="fas fa-hand-holding-usd fa-2x"></i>&nbsp; ≥≥∫Œ ∞¸∏Æ</a>
-               </div>
-               <div class="menu">
-                  <a href="adminpage4_list.html" class="navitem"><i
-                     class="far fa-comment-dots fa-2x"></i>&nbsp; ∞‘Ω√∆«</a>
-               </div>
-               <div class="menu">
-                  <a href="adminpage5_approve.html" class="navitem"><i
-                     class="fas fa-users-cog fa-2x"></i>&nbsp; »∏ø¯ Ω¬¿Œ</a>
-               </div>
-            </div>
-         </div>
-         <div class="chart_board_list">
-           
-               <h2>∞‘Ω√∆«</h2>                   
-               <h3>∞‘Ω√π∞ ∏Ò∑œ</h3>
-           
-             
-               <form action="" method="POST">
-                  
-                     <div class="board_list_table">
-                        <table>
-                           <thead>
-                              <tr class="board_list_column">
-                                 <th class="num">π¯»£</th>
-                                 <th>¡¶∏Ò</th>
-                                 <th>±€æ¥¿Ã</th>
-                                 <th>µÓ∑œ¿œ</th>
-                                 <th>¡∂»∏</th>
-                              </tr>
-                           </thead>
-                           <tbody class="board_list_tbl">
-                            <tr>
-                              <td class="num">∞¯¡ˆ</td>
-                              <td>¡¶∏Ò¡¶∏Ò¡¶∏Ò≥™ø¿¥¬∂ı</td>
-                              <td>±€æ¥¿Ã(æ∆¿Ãµ)</td>
-                              <td>µÓ∑œ¿œ(≥Ø¬•)</td>
-                              <td>¡∂»∏ºˆ</td>
-                           </tr>
-                         
-                         <tr>
-                          <td class="num">∞¯¡ˆ</td>
-                          <td>¡¶∏Ò¡¶∏Ò¡¶∏Ò≥™ø¿¥¬∂ı</td>
-                          <td>±€æ¥¿Ã(æ∆¿Ãµ)</td>
-                          <td>µÓ∑œ¿œ(≥Ø¬•)</td>
-                          <td>¡∂»∏ºˆ</td>
-                       </tr>
-                              <tr>
-                                 <td class="num">1</td>
-                                 <td>¡¶∏Ò¡¶∏Ò¡¶∏Ò≥™ø¿¥¬∂ı</td>
-                                 <td>±€æ¥¿Ã(æ∆¿Ãµ)</td>
-                                 <td>µÓ∑œ¿œ(≥Ø¬•)</td>
-                                 <td>¡∂»∏ºˆ</td>
-                              </tr>
-                              <tr>
-                                 <td class="num">2</td>
-                                 <td>¡¶∏Ò¡¶∏Ò¡¶∏Ò≥™ø¿¥¬∂ı</td>
-                                 <td>±€æ¥¿Ã(æ∆¿Ãµ)</td>
-                                 <td>µÓ∑œ¿œ(≥Ø¬•)</td>
-                                 <td>¡∂»∏ºˆ</td>
-                              </tr>
-                              <tr>
-                                 <td class="num">3</td>
-                                 <td>¡¶∏Ò¡¶∏Ò¡¶∏Ò≥™ø¿¥¬∂ı</td>
-                                 <td>±€æ¥¿Ã(æ∆¿Ãµ)</td>
-                                 <td>µÓ∑œ¿œ(≥Ø¬•)</td>
-                                 <td>¡∂»∏ºˆ</td>
-                              </tr>
-                              <tr>
-                                 <td class="num">4</td>
-                                 <td>¡¶∏Ò¡¶∏Ò¡¶∏Ò≥™ø¿¥¬∂ı</td>
-                                 <td>±€æ¥¿Ã(æ∆¿Ãµ)</td>
-                                 <td>µÓ∑œ¿œ(≥Ø¬•)</td>
-                                 <td>¡∂»∏ºˆ</td>
-                              </tr>
-                              <tr>
-                                 <td class="num">5</td>
-                                 <td>¡¶∏Ò¡¶∏Ò¡¶∏Ò≥™ø¿¥¬∂ı</td>
-                                 <td>±€æ¥¿Ã(æ∆¿Ãµ)</td>
-                                 <td>µÓ∑œ¿œ(≥Ø¬•)</td>
-                                 <td>¡∂»∏ºˆ</td>
-                              </tr>
-                              <tr>
-                                <td class="num">6</td>
-                                <td>¡¶∏Ò¡¶∏Ò¡¶∏Ò≥™ø¿¥¬∂ı</td>
-                                <td>±€æ¥¿Ã(æ∆¿Ãµ)</td>
-                                <td>µÓ∑œ¿œ(≥Ø¬•)</td>
-                                <td>¡∂»∏ºˆ</td>
-                             </tr>
-                             <tr>
-                              <td class="num">7</td>
-                              <td>¡¶∏Ò¡¶∏Ò¡¶∏Ò≥™ø¿¥¬∂ı</td>
-                              <td>±€æ¥¿Ã(æ∆¿Ãµ)</td>
-                              <td>µÓ∑œ¿œ(≥Ø¬•)</td>
-                              <td>¡∂»∏ºˆ</td>
-                           </tr>
-                            
-                            
-                
-            </tbody>
-              </tbody>
-                </tbody>
-                  </tbody>
-                    </tbody>
-                      </tbody>
-                        </tbody>
-                          </tbody>
-                           </tbody>
-                           <tfoot>
-                            
-                             <tr>
-                              
-                               <td class="search" colspan="5"><input type="search">
-                               <input type="button" value="∞Àªˆ">
-                               ∆‰¿Ã¡ˆ π¯»£ ≥™ø¿¥¬ ±∏∞£</td>
-                              </tr>
-                            
-                         </tfoot>
-                        </table>
-                     </div>
-                 
-               </form>
-            
-            <div>
-               <button onclick="location.href='./UserNoticeInsert.jsp'"
-                  class="post">∞‘Ω√π∞ ø√∏Æ±‚</button>
-               <button onclick="location.href='./UserNoticeInsert.jsp'"
-                  class="post">∞‘Ω√π∞ ªË¡¶</button>
-            </div>
-         </div>
+	<div class="wrapper_admin">
+		<div class="adminpage">
+			<div class="adminNav">
+				<div class="logo">
+					<a href="UserTotalPower.jsp" class="logoitem"><i
+						class="fas fa-home fa-3x">Enf</i></a>
+				</div>
+				<div class="list_group">
+					<div class="menu">
+						<a href="UserTotalPower.jsp" class="navitem"><i
+							class="fas fa-charging-station fa-2x"></i>&nbsp; Ï†ÑÎ†• ÏÜåÎπÑÎüâ</a>
+					</div>
+					<div class="menu">
+						<a href="UserSection.jsp" class="navitem"><i
+							class="fas fa-chart-line fa-2x"></i>&nbsp; Íµ¨Ïó≠Î≥Ñ ÏÜåÎπÑÎüâ</a>
+					</div>
+					<div class="menu">
+						<a href="UserPay.jsp" class="navitem"><i
+							class="fas fa-hand-holding-usd fa-2x"></i>&nbsp; ÎÇ©Î∂Ä Í¥ÄÎ¶¨</a>
+					</div>
+					<div class="menu">
+						<a href="/project333333/BoardList.do" class="navitem"><i
+							class="far fa-comment-dots fa-2x"></i>&nbsp; Í≤åÏãúÌåê</a>
+					</div>
+					<div class="menu">
+						<a href="UserSelectRoom.jsp" class="navitem"><i
+							class="fas fa-users-cog fa-2x"></i>&nbsp; Î∞© ÏÑ†ÌÉù</a>
+					</div>
+				</div>
+			</div>
+			<div class="chart_board_list">
 
-         <aside>
-            <div class="container" id="container">
-               <div class="on-off" id="on-off">
-                  <i class="fas fa-power-off fa-2x"></i>
-               </div>
-            </div>
-            <div class="profile">
-               <div class="profile_img">
-                  <img src="../image/woman.png" class="about_img" alt="">
-               </div>
+				<!-- </div> -->
+				<h2>Í≤åÏãúÌåê</h2>
+				<h3>Í≤åÏãúÎ¨º Î™©Î°ù</h3>
 
-               <div class="user_name">
-                  <h3>USER NAME</h3>
-               </div>
-            </div>
-            <div class="alert_msg">
-               <h3>æÀ∏≤</h3>
-               <div class="alert1">1</div>
-               <div class="alert2">2</div>
-               <div class="alert3">3</div>
-               <div class="alert4">4</div>
-            </div>
-         </aside>
-      </div>
-      <script src=".,/JS/icon.js" charset="UTF-8"></script>
+
+				<div class="board_list_table">
+					<table>
+						<thead>
+							<tr class="board_list_column">
+								<th class="num">Î≤àÌò∏</th>
+								<th>Ï†úÎ™©</th>
+								<th>Í∏ÄÏì¥Ïù¥</th>
+								<th>Îì±Î°ùÏùº</th>
+								<th>Ï°∞Ìöå</th>
+							</tr>
+						</thead>
+						<tbody>
+							<%-- <c:forEach var="vo" items="${vo }" begin="0" end="1" step="1">  --%>
+							<c:forEach var="vo" items="${vo }">
+								<tr>
+									<td class="tg-0pky">${vo.num }</td>
+									<td class="tg-0pky"><a href="Content.do?num=${vo.num }">${vo.title }</a></td>
+									<td class="tg-0pky">${vo.name }</td>
+									<td class="tg-0pky">${vo.day }</td>
+									<td class="tg-0pky">${vo.click }</td>
+
+								</tr>
+							</c:forEach>
+							<form action="BoardList.do">
+							<tr>
+								<td colspan="5"><select name="category">
+										<option value="none">=== ÏÑ†ÌÉù ===</option>
+										<option value="title">Ï†úÎ™©</option>
+										<option value="content">ÎÇ¥Ïö©</option>
+										<option value="tc">Ï†úÎ™©+ÎÇ¥Ïö©</option>
+										<option value="name">Í∏ÄÏì¥Ïù¥</option>
+								</select> <input type="text" name="search" id=""> <input
+									type="submit" value="Í≤ÄÏÉâ"> <%--<c:forEach var="vo" items="${vo }" varStatus="status" begin="1" end= "${fn:length(vo)/20}" step="1"> --%>
+
+									<c:choose>
+										<%-- pnumÏù¥ 0ÏúºÎ°ú ÎÅùÎÇ†Îïå --%>
+										<c:when test="${pnum%10 eq 0 }">
+											<fmt:parseNumber var="start" value="${pnum/10 }"
+												integerOnly="true" />
+											<fmt:parseNumber var="end" value="${pnum/10 }"
+												integerOnly="true" />
+											<c:if test="${pnum>=11 }">
+												<a href="BoardList.do?pnum=${start*10 }"> Ïù¥Ï†Ñ </a>
+											</c:if>
+
+											<c:forEach var="cnt" varStatus="status"
+												begin="${start*10-9 }" end="${pnum-1 }">
+
+
+												<a href="BoardList.do?pnum=${status.index } ">${status.index }</a>
+
+
+											</c:forEach>
+											<strong>${pnum }</strong>
+
+
+
+
+
+											<c:if test="${cnt > pnum }">
+												<c:choose>
+													<%-- Îí§Ïóê 10ÌéòÏù¥ÏßÄÍπåÏßÄ ÎßåÎì§Ïñ¥Ï£ºÎäî Í≤ΩÏö∞ --%>
+													<c:when test="${cnt-pnum >10 }">
+														<c:forEach var="cnt" varStatus="status" begin="${pnum+1 }"
+															end="${end*10 }">
+															<a href="BoardList.do?pnum=${status.index } ">${status.index }</a>
+														</c:forEach>
+													</c:when>
+													<%--Ï¥ùÌéòÏù¥ÏßÄÍπåÏßÄÎßå ÎßåÎì§Ïñ¥Ï£ºÎäî Í≤ΩÏö∞ --%>
+													<c:otherwise>
+														<c:choose>
+															<c:when test="${end+10>cnt }">
+																<c:forEach var="cnt" varStatus="status"
+																	begin="${pnum+1 }" end="${cnt }">
+																	<a href="BoardList.do?pnum=${status.index } ">${status.index }</a>
+																</c:forEach>
+															</c:when>
+															<c:otherwise>
+
+															</c:otherwise>
+														</c:choose>
+
+
+													</c:otherwise>
+												</c:choose>
+
+											</c:if>
+
+										</c:when>
+
+
+
+
+										<%-- pnumÏù¥ 0ÏúºÎ°ú ÎßûÏïÑÎñ®Ïñ¥ÏßÄÏßÄ ÏïäÏùÑ Îïå  --%>
+										<c:otherwise>
+											<fmt:parseNumber var="start" value="${pnum/10 }"
+												integerOnly="true" />
+											<fmt:parseNumber var="end" value="${pnum/10 }"
+												integerOnly="true" />
+
+											<c:if test="${pnum>=11 }">
+												<a href="BoardList.do?pnum=${start*10 }"> Ïù¥Ï†Ñ </a>
+											</c:if>
+
+											<c:forEach var="cnt" varStatus="status"
+												begin="${start*10+1 }" end="${pnum-1 }">
+
+												<a href="BoardList.do?pnum=${status.index } ">${status.index }</a>
+
+											</c:forEach>
+											<strong>${pnum }</strong>
+
+											<c:if test="${cnt > pnum}">
+
+												<c:choose>
+													<%-- Îí§Ïóê 10ÌéòÏù¥ÏßÄÍπåÏßÄ ÎßåÎì§Ïñ¥Ï£ºÎäî Í≤ΩÏö∞ --%>
+													<c:when test="${cnt-pnum gt 10 }">
+
+														<c:forEach var="cnt" varStatus="status" begin="${pnum+1 }"
+															end="${end*10+10 }">
+															<a href="BoardList.do?pnum=${status.index } ">${status.index }</a>
+														</c:forEach>
+													</c:when>
+													<%--Ï¥ùÌéòÏù¥ÏßÄÍπåÏßÄÎßå ÎßåÎì§Ïñ¥Ï£ºÎäî Í≤ΩÏö∞ --%>
+													<c:otherwise>
+														<c:choose>
+															<c:when test="${end*10+10>cnt }">
+
+																<c:forEach var="cnt" varStatus="status"
+																	begin="${pnum+1 }" end="${cnt}">
+																	<a href="BoardList.do?pnum=${status.index } ">${status.index }</a>
+																</c:forEach>
+															</c:when>
+															<c:otherwise>
+																<c:forEach var="cnt" varStatus="status"
+																	begin="${pnum+1 }" end="${end*10+10}">
+																	<a href="BoardList.do?pnum=${status.index } ">${status.index }</a>
+																</c:forEach>
+															</c:otherwise>
+														</c:choose>
+
+													</c:otherwise>
+												</c:choose>
+
+											</c:if>
+
+
+
+										</c:otherwise>
+									</c:choose> <c:if test="${cnt>start*10 and cnt>=11 }">
+										<a href="BoardList.do?pnum=${start*10+11 }"> >> </a>
+									</c:if>
+									</form>
+						</tbody>
+
+					</table>
+				</div>
+
+
+				<div>
+					<!-- <div class="post">
+						<a href="/project333333/user/UserNoticeInsert.jsp">Í≤åÏãúÎ¨º Ïò¨Î¶¨Í∏∞</a>
+					</div> -->
+					<button
+							onclick="location.href='/project333333/user/UserNoticeInsert.jsp'"
+							class="post">Í≤åÏãúÎ¨º Ïò¨Î¶¨Í∏∞</button>
+				<!-- 	<div class="post">
+						<a href="/project333333/user/UserNoticeInsert.jsp">Í≤åÏãúÎ¨º ÏÇ≠Ï†ú</a>
+					</div> -->
+					<button
+							onclick="location.href='/project333333/user/UserNoticeInsert.jsp'"
+							class="post">Í≤åÏãúÎ¨º ÏÇ≠Ï†ú</button>
+				</div>
+			</div>
+
+			<aside>
+				<div class="container" id="container">
+					<div class="on-off" id="on-off">
+						<i class="fas fa-power-off fa-2x"></i>
+					</div>
+				</div>
+				<div class="profile">
+					<div class="profile_img">
+						<img src="../image/woman.png" class="about_img" alt="">
+					</div>
+
+					<div class="user_name">
+						<h3>USER NAME</h3>
+					</div>
+				</div>
+				<div class="alert_msg">
+					<h3>ÏïåÎ¶º</h3>
+					<div class="alert1">1</div>
+					<div class="alert2">2</div>
+					<div class="alert3">3</div>
+					<div class="alert4">4</div>
+				</div>
+			</aside>
+		</div>
+		<script src="/project333333/JS/icon.js" charset="UTF-8"></script>
 </body>
 
 </html>

@@ -29,7 +29,7 @@
 .my-calendar .calendar-box {
 	display: grid;
 	grid-template-columns: 100%;
-	grid-template-rows: 10% 90%;
+	grid-template-rows: 20% 80%;
 	height: 100%;
 }
 
@@ -106,6 +106,7 @@
 	position: relative; cursor : pointer;
 	color: black;
 	cursor: pointer;
+	font-size: 25px;
 }
 
 .cal-table td.today {

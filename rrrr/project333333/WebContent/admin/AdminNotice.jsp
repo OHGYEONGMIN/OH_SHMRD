@@ -13,6 +13,54 @@
 <script src="https://kit.fontawesome.com/377e1f4283.js"
 	crossorigin="anonymous"></script>
 <title>게시물 내용</title>
+
+<style>
+.tg {
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 100%;
+	color: white;
+}
+
+.tg td {
+	border-color: black;
+	border-style: solid;
+	border-width: 1px;
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	overflow: hidden;
+	padding: 10px 5px;
+	word-break: normal;
+	color: white;
+}
+
+.tg th {
+	border-color: black;
+	border-style: solid;
+	border-width: 1px;
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	overflow: hidden;
+	padding: 10px 5px;
+	word-break: normal;
+	color: white;
+}
+
+.tg .tg-cjtp {
+	background-color: #ecf4ff;
+	border-color: inherit;
+	text-align: center;
+	vertical-align: top color: white;
+}
+
+.tg .tg-0pky {
+	border-color: inherit;
+	text-align: left;
+	vertical-align: top color: white;
+}
+</style>
+
 </head>
 
 <body>
@@ -20,110 +68,203 @@
 		<div class="adminpage">
 			<div class="adminNav">
 				<div class="logo">
-					<a href="adminpage1.html" class="logoitem"><i
+					<a href="AdminTotalPower.jsp" class="logoitem"><i
 						class="fas fa-home fa-3x">Enf</i></a>
 				</div>
 				<div class="list_group">
 					<div class="menu">
-						<a href="adminpage1.html" class="navitem"><i
+						<a href="AdminTotalPower.jsp" class="navitem"><i
 							class="fas fa-charging-station fa-2x"></i>&nbsp; 전력 소비량</a>
 					</div>
 					<div class="menu">
-						<a href="adminpage2.html" class="navitem"><i
+						<a href="AdminSection.jsp" class="navitem"><i
 							class="fas fa-chart-line fa-2x"></i>&nbsp; 구역별 소비량</a>
 					</div>
 					<div class="menu">
-						<a href="adminpage3_userpay.html" class="navitem"><i
+						<a href="AdminTotalPay.jsp" class="navitem"><i
 							class="fas fa-hand-holding-usd fa-2x"></i>&nbsp; 납부 관리</a>
 					</div>
 					<div class="menu">
-						<a href="adminpage4_list.html" class="navitem"><i
+						<a href="/project333333/BoardList.do" class="navitem"><i
 							class="far fa-comment-dots fa-2x"></i>&nbsp; 게시판</a>
 					</div>
 					<div class="menu">
-						<a href="adminpage5_approve.html" class="navitem"><i
+						<a href="AdminApprove.jsp" class="navitem"><i
 							class="fas fa-users-cog fa-2x"></i>&nbsp; 회원 승인</a>
 					</div>
 				</div>
-
-
 			</div>
-			<div class="chart_board_content">
-				<div>
-					<h2>게시판</h2>
-				</div>
-				<div></div>
-				<div>
-					<h3>게시물 목록</h3>
-					<br>
-					<form action="" method="POST">
-						<div class="board_list">
-							<div class="member_table">
-								<table>
-									<thead>
-										<tr class="member_list_column">
-											<th>번호</th>
-											<th>제목</th>
-											<th>글쓴이</th>
-											<th>등록일</th>
-											<th>조회</th>
-										</tr>
-									</thead>
-									<tbody class="member_list_tbl">
-										<tr>
-											<td>글번호1</td>
-											<td>제목제목제목나오는란</td>
-											<td>글쓴이(아이디)</td>
-											<td>등록일(날짜)</td>
-											<td>조회수</td>
-										</tr>
-										<tr>
-											<td>글번호2</td>
-											<td>제목제목제목나오는란</td>
-											<td>글쓴이(아이디)</td>
-											<td>등록일(날짜)</td>
-											<td>조회수</td>
-										</tr>
-										<tr>
-											<td>글번호3</td>
-											<td>제목제목제목나오는란</td>
-											<td>글쓴이(아이디)</td>
-											<td>등록일(날짜)</td>
-											<td>조회수</td>
-										</tr>
-										<tr>
-											<td>글번호4</td>
-											<td>제목제목제목나오는란</td>
-											<td>글쓴이(아이디)</td>
-											<td>등록일(날짜)</td>
-											<td>조회수</td>
-										</tr>
-										<tr>
-											<td>글번호4</td>
-											<td>제목제목제목나오는란</td>
-											<td>글쓴이(아이디)</td>
-											<td>등록일(날짜)</td>
-											<td>조회수</td>
-										</tr>
-									</tbody>
-									<tfoot>
-										<tr>
-											<td></td>
-											<td><input type="search"></td>
-											<td><input type="button" value="검색"></td>
-											<td>페이지 번호 나오는 구간</td>
-										</tr>
-									</tfoot>
-								</table>
-							</div>
+			<div class="chart_board_list">
+
+				<!-- </div> -->
+				<h2>게시판</h2>
+				<h3>게시물 목록</h3>
+
+				<form action="" method="POST">
+
+					<div class="board_list_table">
+						<table>
+							<thead>
+								<tr class="board_list_column">
+									<th class="num">번호</th>
+									<th>제목</th>
+									<th>글쓴이</th>
+									<th>등록일</th>
+									<th>조회</th>
+								</tr>
+							</thead>
+							<tbody>
+								<%-- <c:forEach var="vo" items="${vo }" begin="0" end="1" step="1">  --%>
+								<c:forEach var="vo" items="${vo }">
+									<tr>
+										<td class="tg-0pky">${vo.num }</td>
+										<td class="tg-0pky"><a href="Content.do?num=${vo.num }">${vo.title }</a></td>
+										<td class="tg-0pky">${vo.name }</td>
+										<td class="tg-0pky">${vo.day }</td>
+										<td class="tg-0pky">${vo.click }</td>
+
+									</tr>
+								</c:forEach>
+								<form action="/smgrid/BoardList.do">
+									<tr>
+										<td colspan="5"><select name="category">
+												<option value="none">=== 선택 ===</option>
+												<option value="title">제목</option>
+												<option value="content">내용</option>
+												<option value="tc">제목+내용</option>
+												<option value="name">글쓴이</option>
+										</select> <input type="text" name="search" id=""> <input
+											type="submit" value="검색"> <%--<c:forEach var="vo" items="${vo }" varStatus="status" begin="1" end= "${fn:length(vo)/20}" step="1"> --%>
+
+											<c:choose>
+												<%-- pnum이 0으로 끝날때 --%>
+												<c:when test="${pnum%10 eq 0 }">
+													<fmt:parseNumber var="start" value="${pnum/10 }"
+														integerOnly="true" />
+													<fmt:parseNumber var="end" value="${pnum/10 }"
+														integerOnly="true" />
+													<c:if test="${pnum>=11 }">
+														<a href="BoardList.do?pnum=${start*10 }"> 이전 </a>
+													</c:if>
+
+													<c:forEach var="cnt" varStatus="status"
+														begin="${start*10-9 }" end="${pnum-1 }">
 
 
-						</div>
-					</form>
-				</div>
+														<a href="BoardList.do?pnum=${status.index } ">${status.index }</a>
+
+
+													</c:forEach>
+													<strong>${pnum }</strong>
+
+
+
+
+
+													<c:if test="${cnt > pnum }">
+														<c:choose>
+															<%-- 뒤에 10페이지까지 만들어주는 경우 --%>
+															<c:when test="${cnt-pnum >10 }">
+																<c:forEach var="cnt" varStatus="status"
+																	begin="${pnum+1 }" end="${end*10 }">
+																	<a href="BoardList.do?pnum=${status.index } ">${status.index }</a>
+																</c:forEach>
+															</c:when>
+															<%--총페이지까지만 만들어주는 경우 --%>
+															<c:otherwise>
+																<c:choose>
+																	<c:when test="${end+10>cnt }">
+																		<c:forEach var="cnt" varStatus="status"
+																			begin="${pnum+1 }" end="${cnt }">
+																			<a href="BoardList.do?pnum=${status.index } ">${status.index }</a>
+																		</c:forEach>
+																	</c:when>
+																	<c:otherwise>
+
+																	</c:otherwise>
+																</c:choose>
+
+
+															</c:otherwise>
+														</c:choose>
+
+													</c:if>
+
+												</c:when>
+
+
+
+
+												<%-- pnum이 0으로 맞아떨어지지 않을 때  --%>
+												<c:otherwise>
+													<fmt:parseNumber var="start" value="${pnum/10 }"
+														integerOnly="true" />
+													<fmt:parseNumber var="end" value="${pnum/10 }"
+														integerOnly="true" />
+
+													<c:if test="${pnum>=11 }">
+														<a href="BoardList.do?pnum=${start*10 }"> 이전 </a>
+													</c:if>
+
+													<c:forEach var="cnt" varStatus="status"
+														begin="${start*10+1 }" end="${pnum-1 }">
+
+														<a href="BoardList.do?pnum=${status.index } ">${status.index }</a>
+
+													</c:forEach>
+													<strong>${pnum }</strong>
+
+													<c:if test="${cnt > pnum}">
+
+														<c:choose>
+															<%-- 뒤에 10페이지까지 만들어주는 경우 --%>
+															<c:when test="${cnt-pnum gt 10 }">
+
+																<c:forEach var="cnt" varStatus="status"
+																	begin="${pnum+1 }" end="${end*10+10 }">
+																	<a href="BoardList.do?pnum=${status.index } ">${status.index }</a>
+																</c:forEach>
+															</c:when>
+															<%--총페이지까지만 만들어주는 경우 --%>
+															<c:otherwise>
+																<c:choose>
+																	<c:when test="${end*10+10>cnt }">
+
+																		<c:forEach var="cnt" varStatus="status"
+																			begin="${pnum+1 }" end="${cnt}">
+																			<a href="BoardList.do?pnum=${status.index } ">${status.index }</a>
+																		</c:forEach>
+																	</c:when>
+																	<c:otherwise>
+																		<c:forEach var="cnt" varStatus="status"
+																			begin="${pnum+1 }" end="${end*10+10}">
+																			<a href="BoardList.do?pnum=${status.index } ">${status.index }</a>
+																		</c:forEach>
+																	</c:otherwise>
+																</c:choose>
+
+															</c:otherwise>
+														</c:choose>
+
+													</c:if>
+
+
+
+												</c:otherwise>
+											</c:choose> <c:if test="${cnt>start*10 and cnt>=11 }">
+												<a href="BoardList.do?pnum=${start*10+11 }"> >> </a>
+											</c:if>
+								</form>
+							</tbody>
+
+						</table>
+					</div>
+
+				</form>
+
 				<div>
-					<button onclick="location.href='./UserNoticeInsert.jsp'"
-						class="post">게시물 올리기</button>
+					<a href="/project333333/user/UserNoticeInsert.jsp" class="post">게시물
+						올리기</a>
 					<button onclick="location.href='./UserNoticeInsert.jsp'"
 						class="post">게시물 삭제</button>
 				</div>

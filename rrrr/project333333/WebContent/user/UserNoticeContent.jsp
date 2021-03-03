@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +13,7 @@
 <link href="/project333333/CSS/icon.css" rel="stylesheet">
 <script src="https://kit.fontawesome.com/377e1f4283.js"
 	crossorigin="anonymous"></script>
-<title>게시물 내용</title>
+<title>게시물 내용 ${vo.content }</title>
 </head>
 <style>
 </style>
@@ -47,33 +49,29 @@
 				</div>
 			</div>
 			<div class="chart_board_post">
-				<form action="/project333333/BoardInsert.do" method="POST">
-					<div>
-						<h2>게시판</h2>
-					</div>
-					<div>
-						<h3>게시물 제목</h3>
-						<textarea name="title" id="" style="width: 99.5%; height: 40px;"
-							rows="2" placeholder="제목을 입력하세요."></textarea>
-					</div>
-					<div>
-						<br>
-						<h3>게시물 내용</h3>
-
+				<div>
+					<h2>게시판</h2>
+				</div>
+				<div>
+					<h3>게시물 제목</h3>
+					<div id="" style="width: 99.5%; height: 40px;">${vo.title }</div>
+				</div>
+				<div>
+					<br>
+					<h3>게시글 내용</h3>
+					<form action="" method="POST">
 						<div class="board_list"></div>
 						<div>
-							<textarea name="content" id=""
-								style="width: 99.5%; height: 450px;" rows="8"
-								placeholder="내용을 입력하세요."></textarea>
+							<div id="" style="width: 99.5%; height: 450px;">
+								<p>${vo.content }</p>
+							</div>
 						</div>
-
-					</div>
-					<div>
-						<button
-							onclick="location.href='/project333333/adminpage4_list.html'"
-							class="post">게시물 올리기</button>
-					</div>
-				</form>
+					</form>
+				</div>
+				<div>
+					<button onclick="location.href='./adminpage4_list.html'"
+						class="post">게시물 올리기</button>
+				</div>
 			</div>
 
 			<aside>
@@ -103,4 +101,3 @@
 		<script src="../JS/icon.js" charset="UTF-8"></script>
 </body>
 </html>
-s

@@ -1,17 +1,16 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="/project333333/CSS/style.css" rel="stylesheet">
-<link href="/project333333/CSS/icon.css" rel="stylesheet">
+<link href="../CSS/style.css" rel="stylesheet">
+<link href="../CSS/icon.css" rel="stylesheet">
 <script src="https://kit.fontawesome.com/377e1f4283.js"
 	crossorigin="anonymous"></script>
-<title>ê²Œì‹œë¬¼ ë‚´ìš©</title>
+<title>°Ô½Ã¹° ³»¿ë</title>
 </head>
 <style>
 </style>
@@ -26,54 +25,50 @@
 				<div class="list_group">
 					<div class="menu">
 						<a href="UserTotalPower.jsp" class="navitem"><i
-							class="fas fa-charging-station fa-2x"></i>&nbsp; ì „ë ¥ ì†Œë¹„ëŸ‰</a>
+							class="fas fa-charging-station fa-2x"></i>&nbsp; Àü·Â ¼Òºñ·®</a>
 					</div>
 					<div class="menu">
 						<a href="UserSection.jsp" class="navitem"><i
-							class="fas fa-chart-line fa-2x"></i>&nbsp; êµ¬ì—­ë³„ ì†Œë¹„ëŸ‰</a>
+							class="fas fa-chart-line fa-2x"></i>&nbsp; ±¸¿ªº° ¼Òºñ·®</a>
 					</div>
 					<div class="menu">
 						<a href="UserPay.jsp" class="navitem"><i
-							class="fas fa-hand-holding-usd fa-2x"></i>&nbsp; ë‚©ë¶€ ê´€ë¦¬</a>
+							class="fas fa-hand-holding-usd fa-2x"></i>&nbsp; ³³ºÎ °ü¸®</a>
 					</div>
 					<div class="menu">
 						<a href="/project333333/BoardList.do" class="navitem"><i
-							class="far fa-comment-dots fa-2x"></i>&nbsp; ê²Œì‹œíŒ</a>
+							class="far fa-comment-dots fa-2x"></i>&nbsp; °Ô½ÃÆÇ</a>
 					</div>
 					<div class="menu">
 						<a href="UserSelectRoom.jsp" class="navitem"><i
-							class="fas fa-users-cog fa-2x"></i>&nbsp; ë°© ì„ íƒ</a>
+							class="fas fa-users-cog fa-2x"></i>&nbsp; ¹æ ¼±ÅÃ</a>
 					</div>
 				</div>
 			</div>
 			<div class="chart_board_post">
-				<form action="/project333333/BoardInsert.do" method="POST">
-					<div>
-						<h2>ê²Œì‹œíŒ</h2>
-					</div>
-					<div>
-						<h3>ê²Œì‹œë¬¼ ì œëª©</h3>
-						<textarea name="title" id="" style="width: 99.5%; height: 40px;"
-							rows="2" placeholder="ì œëª©ì„ ìž…ë ¥í•˜ì„¸ìš”."></textarea>
-					</div>
-					<div>
-						<br>
-						<h3>ê²Œì‹œë¬¼ ë‚´ìš©</h3>
-
+				<div>
+					<h2>°Ô½ÃÆÇ</h2>
+				</div>
+				<div>
+					<h3>´ä±Û</h3>
+					<form action="/smgrid/Write.do" method="POST"></form>
+					<textarea name="title" id="" style="width: 99.5%; height: 40px;"
+						rows="2">Re : ${title }</textarea>
+				</div>
+				<div>
+					<br>
+					<h3>°Ô½Ã¹° ³»¿ë</h3>
+					<form action="" method="POST">
 						<div class="board_list"></div>
 						<div>
 							<textarea name="content" id=""
-								style="width: 99.5%; height: 450px;" rows="8"
-								placeholder="ë‚´ìš©ì„ ìž…ë ¥í•˜ì„¸ìš”."></textarea>
+								style="width: 99.5%; height: 300px;" rows="8"
+								placeholder="³»¿ëÀ» ÀÔ·ÂÇÏ¼¼¿ä.">¿©±â ¾È¿¡ ÀÌÀü ±ÛÀÌ µé¾î¿À°í</textarea>
+							<br>±Û ¾Æ·¡¿¡ -------------½áÁÖ´Â ¹æ½ÄÀÌ °¡´ÉÇÑ°¡?
 						</div>
-
-					</div>
-					<div>
-						<button
-							onclick="location.href='/project333333/adminpage4_list.html'"
-							class="post">ê²Œì‹œë¬¼ ì˜¬ë¦¬ê¸°</button>
-					</div>
-				</form>
+					</form>
+				</div>
+				<div>´äÀåÇÏ±â</div>
 			</div>
 
 			<aside>
@@ -84,7 +79,7 @@
 				</div>
 				<div class="profile">
 					<div class="profile_img">
-						<img src="../image/woman.png" class="about_img" alt="">
+						<img src="./image/woman.png" class="about_img" alt="">
 					</div>
 
 					<div class="user_name">
@@ -92,7 +87,7 @@
 					</div>
 				</div>
 				<div class="alert_msg">
-					<h3>ì•Œë¦¼</h3>
+					<h3>¾Ë¸²</h3>
 					<div class="alert1">1</div>
 					<div class="alert2">2</div>
 					<div class="alert3">3</div>
@@ -103,4 +98,3 @@
 		<script src="../JS/icon.js" charset="UTF-8"></script>
 </body>
 </html>
-s

@@ -10,7 +10,7 @@
 <link href="../CSS/style.css" rel="stylesheet">
 <link href="../CSS/choose_room.css" rel="stylesheet">
 <link href="../CSS/icon.css" rel="stylesheet">
-<title>납부 관리</title>
+<title>방 선택</title>
 </head>
 <style>
 </style>
@@ -19,29 +19,34 @@
 	<div class="wrapper_admin">
 
 		<div class="adminpage">
-			   <div class="adminNav">
-                <div class="logo">
-                    <a href="adminpage1.html" class="logoitem"><i class="fas fa-home fa-3x">Enf</i></a>
-                </div>
-                <div class="list_group">
-                    <div class="menu">
-                        <a href="adminpage1.html" class="navitem"><i class="fas fa-charging-station fa-2x"></i>&nbsp; 전력
-                            소비량</a>
-                    </div>
-                    <div class="menu">
-                        <a href="adminpage2.html" class="navitem"><i class="fas fa-chart-line fa-2x"></i>&nbsp; 구역별
-                            소비량</a>
-                    </div>
-                    <div class="menu">
-                        <a href="adminpage3_userpay.html" class="navitem"><i
-                                class="fas fa-hand-holding-usd fa-2x"></i>&nbsp; 납부 관리</a>
-                    </div>
-                    <div class="menu">
-                        <a href="adminpage4_list.html" class="navitem"><i class="far fa-comment-dots fa-2x"></i>&nbsp;
-                            게시판</a>
-                    </div>
-                </div>
-            </div>
+			<div class="adminNav">
+				<div class="logo">
+					<a href="UserTotalPower.jsp" class="logoitem"><i
+						class="fas fa-home fa-3x">Enf</i></a>
+				</div>
+				<div class="list_group">
+					<div class="menu">
+						<a href="UserTotalPower.jsp" class="navitem"><i
+							class="fas fa-charging-station fa-2x"></i>&nbsp; 전력 소비량</a>
+					</div>
+					<div class="menu">
+						<a href="UserSection.jsp" class="navitem"><i
+							class="fas fa-chart-line fa-2x"></i>&nbsp; 구역별 소비량</a>
+					</div>
+					<div class="menu">
+						<a href="UserPay.jsp" class="navitem"><i
+							class="fas fa-hand-holding-usd fa-2x"></i>&nbsp; 납부 관리</a>
+					</div>
+					<div class="menu">
+						<a href="/project333333/BoardList.do" class="navitem"><i
+							class="far fa-comment-dots fa-2x"></i>&nbsp; 게시판</a>
+					</div>
+					<div class="menu">
+						<a href="UserSelectRoom.jsp" class="navitem"><i
+							class="fas fa-users-cog fa-2x"></i>&nbsp; 방 선택</a>
+					</div>
+				</div>
+			</div>
 			<div class="selroom">
 				<div class="roomtable">
 					<h3 class="room_select_title">호실 선택</h3>
@@ -50,30 +55,30 @@
 						<th class="roomnumber" colspan="3">방 번호</th>
 						<tr>
 							<td class="1F">100호</td>
-							<td><input id="ho101" class="room" type="button" name="roomnum"
-								value="101호" onclick="roomcheck(101)"></input></td>
-							<td><input id="ho102"  class="room" type="button" name="roomnum"
-								value="102호" onclick="roomcheck(102)"></input></td>
-							<td><input id="ho103" class="room" type="button" name="roomnum"
-								value="103호" onclick="roomcheck(103)"></input></td>
+							<td><input id="ho101" class="room" type="button"
+								name="roomnum" value="101호" onclick="roomcheck(101)"></input></td>
+							<td><input id="ho102" class="room" type="button"
+								name="roomnum" value="102호" onclick="roomcheck(102)"></input></td>
+							<td><input id="ho103" class="room" type="button"
+								name="roomnum" value="103호" onclick="roomcheck(103)"></input></td>
 						</tr>
 						<tr>
 							<td class="2F">200호</td>
-							<td><input id="ho201" class="room" type="button" name="roomnum"
-								value="201호" onclick="roomcheck(201)"></input></td>
-							<td><input id="ho201" class="room" type="button" name="roomnum"
-								value="202호" onclick="roomcheck(202)"></input></td>
-							<td><input id="ho201" class="room" type="button" name="roomnum"
-								value="203호" onclick="roomcheck(203)"></input></td>
+							<td><input id="ho201" class="room" type="button"
+								name="roomnum" value="201호" onclick="roomcheck(201)"></input></td>
+							<td><input id="ho201" class="room" type="button"
+								name="roomnum" value="202호" onclick="roomcheck(202)"></input></td>
+							<td><input id="ho201" class="room" type="button"
+								name="roomnum" value="203호" onclick="roomcheck(203)"></input></td>
 						</tr>
 						<tr>
 							<td class="3F">300호</td>
-							<td><input id="ho301" class="room" type="button" name="roomnum"
-								value="301호" onclick="roomcheck(301)"></input></td>
-							<td><input id="ho302" class="room" type="button" name="roomnum"
-								value="302호" onclick="roomcheck(302)"></input></td>
-							<td><input id="ho303" class="room" type="button" name="roomnum"
-								value="303호" onclick="roomcheck(303)"></input></td>
+							<td><input id="ho301" class="room" type="button"
+								name="roomnum" value="301호" onclick="roomcheck(301)"></input></td>
+							<td><input id="ho302" class="room" type="button"
+								name="roomnum" value="302호" onclick="roomcheck(302)"></input></td>
+							<td><input id="ho303" class="room" type="button"
+								name="roomnum" value="303호" onclick="roomcheck(303)"></input></td>
 						</tr>
 					</table>
 
@@ -113,24 +118,26 @@
 		<script src="http://code.jquery.com/jquery-latest.js"></script>
 		<script type="text/javascript">
 			function roomcheck(num) {
-				$.ajax({
+				$
+						.ajax({
 							url : '/project333333/SelectRoom.do?roomnum=' + num,
 							success : function(result) {
 								if (confirm(num + "호를 신청 하시겠습니까?") == true) {
-									if (result=="true") {
+									if (result == "true") {
 										alert("빈 방이 아닙니다.");
 									} else {
-										$.ajax({
+										$
+												.ajax({
 													url : '/project333333/InsertRoom.do?roomnum='
 															+ num,
 													success : function(data) {
-														alert(num+"방 신청 완료 되었습니다.")
-														
-														
+														alert(num
+																+ "방 신청 완료 되었습니다.")
+
 													},
 													error : function() {
 													}
-												}); 
+												});
 									}
 								} else {
 								}

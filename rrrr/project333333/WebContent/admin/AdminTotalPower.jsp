@@ -12,7 +12,8 @@
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css">
 <script
-	src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js" charset="UTF-8"></script>
+	src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"
+	charset="UTF-8"></script>
 <script src="http://code.jquery.com/jquery-latest.js" charset="UTF-8"></script>
 
 <title>AdminPage_전력소비량</title>
@@ -23,33 +24,34 @@
 
 	<div class="wrapper_admin">
 		<div class="adminpage">
-			   <div class="adminNav">
-                <div class="logo">
-                    <a href="adminpage1.html" class="logoitem"><i class="fas fa-home fa-3x">Enf</i></a>
-                </div>
-                <div class="list_group">
-                    <div class="menu">
-                        <a href="adminpage1.html" class="navitem"><i class="fas fa-charging-station fa-2x"></i>&nbsp; 전력
-                            소비량</a>
-                    </div>
-                    <div class="menu">
-                        <a href="adminpage2.html" class="navitem"><i class="fas fa-chart-line fa-2x"></i>&nbsp; 구역별
-                            소비량</a>
-                    </div>
-                    <div class="menu">
-                        <a href="adminpage3_userpay.html" class="navitem"><i
-                                class="fas fa-hand-holding-usd fa-2x"></i>&nbsp; 납부 관리</a>
-                    </div>
-                    <div class="menu">
-                        <a href="adminpage4_list.html" class="navitem"><i class="far fa-comment-dots fa-2x"></i>&nbsp;
-                            게시판</a>
-                    </div>
-                    <div class="menu">
-                        <a href="adminpage5_approve.html" class="navitem"><i class="fas fa-users-cog fa-2x"></i>&nbsp;
-                            회원 승인</a>
-                    </div>
-                </div>
-            </div>
+			<div class="adminNav">
+				<div class="logo">
+					<a href="AdminTotalPower.jsp" class="logoitem"><i
+						class="fas fa-home fa-3x">Enf</i></a>
+				</div>
+				<div class="list_group">
+					<div class="menu">
+						<a href="AdminTotalPower.jsp" class="navitem"><i
+							class="fas fa-charging-station fa-2x"></i>&nbsp; 전력 소비량</a>
+					</div>
+					<div class="menu">
+						<a href="AdminSection.jsp" class="navitem"><i
+							class="fas fa-chart-line fa-2x"></i>&nbsp; 구역별 소비량</a>
+					</div>
+					<div class="menu">
+						<a href="AdminTotalPay.jsp" class="navitem"><i
+							class="fas fa-hand-holding-usd fa-2x"></i>&nbsp; 납부 관리</a>
+					</div>
+					<div class="menu">
+						<a href="/project333333/BoardList.do" class="navitem"><i
+							class="far fa-comment-dots fa-2x"></i>&nbsp; 게시판</a>
+					</div>
+					<div class="menu">
+						<a href="AdminApprove.jsp" class="navitem"><i
+							class="fas fa-users-cog fa-2x"></i>&nbsp; 회원 승인</a>
+					</div>
+				</div>
+			</div>
 
 			<div class="chart_electric">
 				<div class="electric_month">
@@ -62,7 +64,7 @@
 								<button type="button" title="next" class="btn-cal next">
 								</button>
 							</div>
-							<table class="cal-table" style="height:100px">
+							<table class="cal-table" style="height: 100px">
 								<thead>
 									<tr>
 										<th>S</th>
@@ -87,7 +89,7 @@
 					</div>
 				</div>
 				<div class="electric_week">
-					<div class="chart-div" >
+					<div class="chart-div">
 						<canvas id="barChartCanvas" width="700px" height="320px"></canvas>
 					</div>
 				</div>

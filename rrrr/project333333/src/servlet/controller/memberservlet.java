@@ -26,11 +26,11 @@ public class memberservlet extends HttpServlet {
 		String tel = request.getParameter("tel");
 		String addr = request.getParameter("addr");
 		String mail = request.getParameter("email");
-		String room = request.getParameter("room");
 		
-		MemberVO vo = new MemberVO(id, pw, name, sex, tel, addr, mail, room);
+		MemberVO vo = new MemberVO(id, pw, name, sex, tel, addr, mail);
 		MemberDAO dao = new MemberDAO();
 		dao.insert(vo);
+		
 		
 		response.sendRedirect("main/MainPage.jsp");
 		
