@@ -1,0 +1,43 @@
+/* on-off 기능 */
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.8s ease-in-out;
+    margin-top:3%;
+}
+.on-off{
+	 
+    color: rgb(42, 173, 42);
+    outline: none;
+    transition: all 0.8s ease-in-out;
+    transform: scale(0.9);
+    text-shadow: 10px 10px 10px rgb(70, 70, 70);
+}
+.on-off::hover{
+    color: white;
+}
+.switch-on{
+color:  rgb(224, 38 , 39);
+text-shadow: 10px 10px 10px gray;
+transform: scale(1.0);
+
+}s
+/* nav */
+.list_group{
+    transition: all 0.8s ease-in-out;
+}
+.navitem{
+    color: rgb(176, 10, 10);
+    outline: none;
+    transition: all 0.8s ease-in-out;
+    transform: scale(0.9);
+}
+.icon-click{
+    color: rgb(42, 173, 42);
+    text-shadow: 10px 10px 10px rgb(91, 84, 84);
+    transform: scale(1.0);}
+    
+    
+    

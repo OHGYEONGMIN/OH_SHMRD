@@ -1,0 +1,764 @@
+
+*{
+    font-family: 'LotteMartHappy', sans-serif;
+    outline: none;
+    
+}
+
+    body{   
+    	background-size:cover;
+        color: white;
+        overflow: hidden;
+           background-image: url(../image/itback8.jpg);
+        /*background: linear-gradient(#023859,#2e2e2e);*/
+    }
+   body::before{
+       content: '';
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 100%;
+       height: 100%;
+      
+       /* background: linear-gradient(#2196f3,rgb(15, 2, 52));
+        clip-path: circle(30% at right 90%); */
+   }
+    /* 관리자페이지 */
+    body .wrapper_admin{
+        height: 80vh;
+        width: 75%;
+        margin: 5% auto;
+        display: flex;
+    align-items: center;
+    justify-content: center;
+      
+    }
+    
+
+    .admin_name{
+    font-size: 20px;
+  
+    height: 60%;
+    margin-left: 50%;
+    width: 30%;
+    display: flex;
+    align-items:flex-end;
+    text-align: right;
+
+    }
+    .adminpage{   
+    border-radius: 3em;
+    font-size: 20px;
+    width: 100%;
+    height: 100%;
+    border:  rgba(225,225,225,0.3) solid 1px;
+    display: flex;
+    
+    
+    }
+    .adminpage .adminNav{
+    border-radius: 3em;
+    width: 15%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 15% 50% 35%;
+    text-align: center;
+    justify-content: center;
+    }
+    .list_group{
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;         
+        align-items: center;
+        word-spacing: 2px;
+    }
+
+    .list_group .navitem{
+        width: 100%;
+        height: 100%;
+        font-size: 20px;
+        font-weight: bold;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-decoration: none;
+        overflow: hidden;
+
+    }
+    
+    .menu{
+        height: 100%;
+        display: flexbox;
+        align-items: center;
+        justify-items: center;
+        text-align: center;
+        
+        
+        
+        
+
+    }
+    
+    .adminNav img{
+        width: 30%;
+        height: 50%; 
+    }
+    .link{
+        display: flex;
+        margin: 0;
+        font-size: 15px;
+        
+    
+    }.logo{
+        color: white;
+        box-shadow: none;
+        border-bottom: 2px solid rgba( 255, 255, 255, 0.5 );
+        margin-top: 10%;
+       text-align: center;
+       align-items: center;
+        height: 60%;
+        width: 100%;
+        
+    }
+    .logo .logoitem{
+        color: white;
+    }
+    
+   
+    
+    /* 차트 */
+    .admin-room-usage{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 50%;
+        width: 100%;
+    }
+    .adminpage .chart_electric{
+        width: 60%;
+        height: 95%;
+        margin-top: 20px;
+        margin-left: 2%;
+        margin-right: 2%;
+        grid-row-gap: 1em;
+        grid-column-gap : 1em;
+        display: grid;
+        grid-template-columns: 60% 40%;
+        grid-template-rows: 50%;
+        text-align: center;
+    
+    }
+    .electric_week {
+        /* 한줄로 합칠 때 */
+        grid-column: 1/-1;
+   
+     
+      }
+    .adminpage .chart .electric_month {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 10% 90%;
+        width: 80%;
+        height: 50%;
+        margin: 5%;
+        margin-top: 10%;
+        
+        
+        
+        
+        
+    }
+    .adminpage .chart_electric .electric_week {
+       
+        width:100%;
+        height: 100%;
+       
+     
+    }
+    .adminpage .chart_section{
+        width: 60%;
+        height: 95%;
+        margin-top: 20px;
+        margin-left: 2%;
+        margin-right: 2%;
+        grid-row-gap: 1em;
+        grid-column-gap : 1em;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        text-align: center;
+        
+    }
+    .adminpage .chart_electric .public {
+       
+        width: 40%;
+        height: 90%;
+        margin: 5%;
+        margin-top: 3%;
+        margin-bottom: 3%;
+    
+    }
+    .adminpage .chart .private{
+        
+        width: 40%;
+        height: 90%;
+        margin: 5%;
+        margin-top: 3%;
+        margin-bottom: 3%;
+        
+    }
+    /* 납부관리 */
+    .admin_chart_usage{
+        text-align: center;
+        width: 60%;
+        height: 100%;
+        margin-top: 20px;
+        margin-left: 2%;
+        margin-right: 2%;
+        grid-row-gap: 1em;
+        grid-column-gap : 1em;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 46.25% 46.25%
+       
+    }
+    .admin_room_usage{
+       
+       
+        justify-content: center;
+        width: 100%;
+        text-align: center;
+        row-gap: 1em;
+    }
+    
+    .adminpage .chart_usage{     
+        width: 60%;
+        height: 100%;
+        margin-top: 20px;
+        margin-left: 2%;
+        margin-right: 2%;
+        grid-row-gap: 1em;
+        grid-column-gap : 1em;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 95%;
+       
+    }    
+    .adminpage .table{
+ 
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 10% 80%;
+        justify-content: center;
+        width: 100%;
+        text-align: center;     
+    
+    
+     }
+    
+    /* 각 방 사용량 */
+    .adminpage .room_usage{
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 53% 43%;
+        justify-content: center;
+        width: 100%;
+        text-align: center;
+        row-gap: 1em;
+    }
+
+    .room_payment{
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 20% 80%;
+        border-radius: 3em;
+    }
+    .room_tbl {
+        width: 100%;
+        height: 85%;
+        text-align: center;
+        justify-items: center;
+    }
+    .personal_payment{
+        
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 25% 75%;
+    }
+    .total_payment{
+        width: 100%;
+        height: 70%;
+        text-align: center;
+        justify-items: center;
+      
+        
+    }
+    .total_payment th{
+        background: rgb(255, 255, 255, 0.5);
+        border: 1px solid rgba( 255, 255, 255, 0.01 );
+        color: white;
+        padding:3px;
+        text-align: center;   
+    }
+    .total_payment td{
+        box-shadow: 0 15px 35px rgba(0,0,0,0.1) ;
+        /* border: 1px solid #7a7878; */
+        border-collapse: collapse;  
+    }
+
+    /*납부관리 */
+    
+    .payment_tbl{
+        
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        justify-items: center;
+        
+        
+    }
+    .payment_tbl  th{
+        background: rgb(255, 255, 255, 0.2);
+        border: 1px solid rgba( 255, 255, 255, 0.01 );
+
+            color: white;            
+            padding:3px;
+            text-align: center;
+       
+        
+    }.payment_tbl td{       
+        box-shadow: 0 15px 35px rgba(0,0,0,0.1) ;
+        /* border: 1px solid #7a7878; */
+        border-collapse: collapse;
+    }
+    /* 방 별 사용량 */
+    .room_tbl th{
+        background: rgb(255, 255, 255, 0.2);
+        border: 1px solid rgba( 255, 255, 255, 0.01 );
+        color: white;        
+        padding:3px;
+        text-align: center;
+    }
+    .room_tbl td{
+        box-shadow: 0 15px 35px rgba(0,0,0,0.1) ;
+        border-collapse: collapse;
+    }
+    
+    
+ 
+
+    /* 게시판 */
+    
+    .adminpage .chart_board_list{
+        width: 62%;
+        height: 95%;
+        margin-top: 20px;
+       margin-left: 2%;
+       /*  margin-right: 2%;*/
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 10% 10% 65% 15%;
+    }
+    .adminpage .chart_board_post{
+         width: 62%;
+        height: 95%;
+        margin-top: 20px;
+       margin-left: 2%;
+       
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 10% 8% 70% 10%;
+    }
+    .chart_board_post h2{
+        font-size: 40px;
+        align-items: center;
+        text-align: center;
+        justify-items: center;
+    }.chart_board_list h2{
+        font-size: 40px;
+        align-items: center;
+        text-align: center;
+        justify-items: center;
+    }
+    .chart_board_post  h3{
+        margin: 0;
+        font-size: 30px;
+    }
+    .chart_board_list h3{
+        /* margin: 2%; */
+        font-size: 30px;
+    }
+    .chart_board_post textarea{
+       
+         border:0;
+          background: rgba(255,255,255,0.1);
+          backdrop-filter: blur( 5px );       
+          font-size: 20px;
+
+          
+    }
+    .chart_board_post ::placeholder{
+        color: white;
+    
+    }
+    .chart_board_post button{
+        font-size: 20px;
+        background: rgba( 255, 255, 255, 0.2); 
+        backdrop-filter: blur( 2px );
+       border: 1px solid rgba( 255, 255, 255, 0.08 );
+       letter-spacing: 3px;
+       
+    }.chart_board_list button{
+        height: 50%;
+        font-size: 20px;
+        background: rgba( 255, 255, 255, 0.2); 
+        backdrop-filter: blur( 2px );
+       border: 1px solid rgba( 255, 255, 255, 0.08 );
+       letter-spacing: 3px;
+    }
+    .chart_board_post .board_list_table{
+        overflow-x: auto;
+         overflow: auto;
+        height: 650px;
+
+    } .chart_board_list .tfoot .tr{
+        align-items: center;
+    }
+    .board_list_column{
+        /* box-shadow: 0 15px 35px rgba(0,0,0,0.5) ; */
+        backdrop-filter:blur(10px);
+    }
+    .board_list_column th{
+        position: sticky;
+        top: 0px;
+        
+        background: rgb(255, 255, 255, 0.5);
+        color: white;
+        /* border-bottom: 1px solid #444444; */
+        padding:3px;
+        text-align: center;
+          font-size: 25px;
+    }
+    .board_list_table .num{
+        width: 10%;
+    }.board_list_table .search{
+        width: 10%
+    }
+    .board_list_table table  {
+        width: 100%;
+        /* border-top: 1px solid #444444; */
+        border-collapse: collapse;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.1) ;
+      }
+      .board_list_table td {
+          font-size: 25px;
+        color: rgba(255, 255, 255, 0.77);
+        padding: 10px;
+        text-align: center;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.2) ;
+      }
+      .board_list_table td{
+        box-shadow: 0 15px 35px rgba(0,0,0,0.1) ;
+        border-collapse: collapse;
+      }
+      /* -----스크롤바---- */
+      .board_list_table::-webkit-scrollbar {
+        width: 15px;
+      }
+      .board_list_table::-webkit-scrollbar-thumb {
+        background-color: #e4e7ed;
+        border-radius: 10px;
+        background-clip: padding-box;
+        border: 3px solid transparent;
+        opacity: 1;
+      }
+      .board_list_table::-webkit-scrollbar-track {
+        background-color: grey;
+        border-radius: 10px;
+        box-shadow: inset 0px 0px 5px white;
+      }
+
+    
+    .adminpage .member{
+     
+        width: 60%;
+        height: 95%;
+        margin-top: 20px;
+        margin-left: 2%;
+        margin-right: 2%;
+   
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 20%;
+        grid-row-gap: 1em;    
+    }
+   
+    
+    /* 유저 프로필 */
+    aside{
+        display: flex;
+        grid-row-gap: 1em;        
+        margin-top: 1%;
+        margin-left: 2%;
+        margin-right: 2%;        
+        flex-direction: column;
+        width: 15%;
+        height: 95%;
+       
+
+    }
+    /* 버튼 집합 */
+ .logout a{
+     cursor: pointer;
+     outline: none;
+    width:100%;
+   height: 100%;  
+    justify-content: center;
+    align-items: center;
+    background:rgba( 255, 255, 255, 0.05 ) ; 
+    box-shadow: 0 15px 35px rgba(225, 225, 225, 0.2);
+    border-top: 1px solid rgba(225, 225, 225, 0.1);
+    border-bottom: 1px solid rgba(225, 225, 225, 0.1);
+    border-radius: 30px;
+    color: #fff;
+    z-index: 1;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-decoration: none;
+    overflow: hidden;
+    transition: 0.5s;
+   }
+   
+ 
+ .post{
+    float: right;
+    width: 20%;
+    height: 90%;
+    margin-right: 5%;
+    cursor: pointer;
+   color:#fff;
+   background: #004fff;
+   font-size: 16px;
+    outline: none;
+   border:none;
+   border-radius: 100px;
+}
+ 
+post_button{
+	margin-top:40%;
+}
+
+
+
+    
+   .profile{
+        
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 60% 40%;
+        border-radius: 3em;
+        width: 100%;
+        height: 45%;
+    
+    }
+    .profile h3{
+    width:100%;
+    margin-top:25%;
+    font-size:18px;
+    }
+    .alert_msg h3{
+    margin-right:10%;
+        text-align: center;
+        
+
+    }
+    .alert_msg{
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 20% 15% 15% 20% 20%;
+        border-radius: 3em;
+        width: 100%;
+        height: 100%;        
+        margin-left: 2%;
+        margin-right: 2%;
+    
+
+        
+    }
+    .alert1, .alert2, .alert3, .alert4{
+        text-align: left;
+        align-items: center;
+        /* text-align: center; */
+        box-shadow: 0 8px 32px 0 rgba( 0,0,0,0.1 );
+        font-size: 17px;
+        margin-left: 8%;
+    }
+
+        
+    
+    .profile_img{
+margin-top:30%;
+        width: 80%;
+        height:90%;
+    margin: 10%;
+    margin-left: 10%;
+     
+
+    }
+    .about_img{
+    margin-top:20%;
+        width:  100%;
+        height:100%;
+        
+    }
+    .user_name{
+        margin: 5%;
+        width: 90%;
+        height: 5%;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    /* 게시판 페이지 */
+
+    .adminpage .notice_board{
+        /* border: red solid 3px; */
+        width: 60%;
+        height: 95%;
+        margin-top: 20px;
+        margin-left: 5%;
+        margin-right: 2%;
+        /* position: absolute; */
+      
+    }
+    .adminpage .notice_board {
+        font-size: 100%;
+        width: 30%;
+        height: 20%;
+        margin-top: 1%;
+        margin-left: 35%;
+        border: green solid 3px;
+        align-items: center;
+
+
+    
+        
+    }
+    .adminpage .notice_board .board_content{
+        /* border: green solid 3px; */
+        width: 90%;
+        height: 75%;
+        margin: 5%;
+        margin-top: 1%;
+        margin-bottom: 3%;
+       
+    }
+    /* 가입승인페이지 */
+    .adminpage .member{
+        /* border: red solid 3px; */
+        width: 60%;
+        height: 95%;
+        margin-top: 20px;
+        margin-left: 2%;
+        margin-right: 2%;
+        /* position: absolute; */
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 35%;
+    }
+    
+    .adminpage .member .memberlist{
+        /* border: green solid 3px; */
+        width: 70%;
+        height: 90%;
+        margin: 3%;
+        margin-top: 3%;
+        display: flex;
+
+    }.adminpage .member .joinlist{
+        /* border: green solid 3px; */
+        width: 70%;
+        height: 90%;
+        margin: 3%;
+        margin-top: 3%;
+        display: flex;
+    }
+    /* 글레스 기법 _ 관리자&개인*/
+    .adminpage   
+    {border-radius: 3em;
+       
+        background: rgba( 255, 255, 255, 0.05);
+    box-shadow: 0 8px 32px 0 rgba( 0,0,0,0.5 );
+    backdrop-filter: blur( 2px );
+    -webkit-backdrop-filter: blur( 10px );
+    border: 1px solid rgba( 255, 255, 255, 0.5);
+    transition: 0.5s;
+
+    }
+    .adminNav,
+     .electric_month, .electric_yesterday, .electric_week, 
+      .personal,
+     .table,  .room_payment,.selroom,
+     .chart_board,
+     .personal_payment,
+     .accept_list, .member_list,
+     .chart_board_post,.chart_board_list,
+     .choose_room,
+     .member_list, .profile, .alert_msg , .logout
+    {
+        box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+     
+        background: rgba(225, 225, 225, 0.1);
+        border-radius: 3em;
+        backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur( 2px );
+border: 1px solid rgba( 255, 255, 255, 0.5 );
+transition: 0.5s;
+    outline: none;
+    }
+
+
+
+    .menu:hover{
+        transition: 0.5s;
+        color: #fff;
+        background: white;
+
+        transition: 0.3s;
+        transform: translateY(-10px);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    
+    .room_tbl tr:hover th,
+    .room_usage tr:hover th{
+        transition: 0.5s;
+        color: red;
+        background: rgba(255, 255, 255, 0.247); 
+        backdrop-filter: blur( 2px );
+        border: 1px solid rgba( 255, 255, 255, 0.01 );
+
+    }.room_tbl tr:hover ,
+    .payment_tbl tr:hover,
+    .room_usage tr:hover{
+        background: rgba( 255, 255, 255, 0.2); 
+        backdrop-filter: blur( 2px );
+        border: 1px solid rgba( 255, 255, 255, 0.01 );
+    }
+    .logo:hover{
+       transition: 0.3s;
+       transform: translateY(-10px);
+       color: #fff; 
+       background: linear-gradient(to bottom,white, #e4bc0a); 
+      -webkit-background-clip: text; 
+      -webkit-text-fill-color: transparent;
+    }
+    .on-off:hover{
+    color:red;
+    transform: translateY(-5px);   
+   text-shadow: 10px 10px 10px rgb(91, 84, 84);
+    transition: all 0.8s ease-in-out;
+    text-shadow: 10px 10px 10px black;
+    }
+   
+    
